@@ -1,0 +1,202 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Datos del Pasajero - BlueLine Express</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {secondary: "#725a39", "surface-variant": "#ebe1d7", "primary-fixed-dim": "#f6bc68", "on-primary-fixed-variant": "#624000", "surface-bright": "#fff8f4", background: "#fff8f4", "on-secondary-container": "#78603f", "on-error-container": "#93000a", "tertiary-fixed": "#ebe941", tertiary: "#626100", "on-surface-variant": "#504538", "on-secondary-fixed-variant": "#584324", "surface-dim": "#e3d8cf", "secondary-container": "#feddb3", "on-tertiary-fixed": "#1d1d00", "on-error": "#ffffff", outline: "#827566", "on-primary-container": "#ffc97d", "surface-container-lowest": "#ffffff", surface: "#fff8f4", "surface-container-highest": "#ebe1d7", "surface-container": "#f7ece2", "on-background": "#201b15", "surface-tint": "#805604", "outline-variant": "#d4c4b2", "surface-container-low": "#fdf2e8", "on-primary": "#ffffff", "on-tertiary-container": "#424100", error: "#ba1a1a", "tertiary-fixed-dim": "#cecc22", "inverse-surface": "#352f29", primary: "#5d3c00", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "on-secondary-fixed": "#281801", "on-surface": "#201b15", "on-primary-fixed": "#291800", "primary-container": "#7c5200", "on-secondary": "#ffffff", "surface-container-high": "#f1e6dc", "secondary-fixed": "#feddb3", "inverse-on-surface": "#faefe5", "tertiary-container": "#b2b000", "on-tertiary-fixed-variant": "#4a4900", "inverse-primary": "#f6bc68", "secondary-fixed-dim": "#e1c299", "primary-fixed": "#ffddb1"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xs: "4px", sm: "12px", md: "24px", margin: "32px", gutter: "24px", xl: "80px", lg: "48px", base: "8px"}, fontFamily: {"label-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}]}}}};</script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .input-active:focus-within { border-color: #0040e0; box-shadow: 0 0 0 1px #0040e0; }
+        .transition-all-custom { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm flex items-center justify-between px-md h-16">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full active:scale-95 duration-100 ease-in-out" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">BlueLine Express</h1>
+</div>
+<button class="p-2 hover:bg-surface-variant/50 transition-colors rounded-full active:scale-95" onclick="window.location.href='{{DATA:SCREEN:SCREEN_15}}'">
+<span class="material-symbols-outlined text-primary" data-icon="directions_bus">directions_bus</span>
+</button>
+</header>
+<main class="pt-20 px-4 max-w-md mx-auto">
+<!-- Trip Summary Accordion -->
+<section class="mb-6">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(46,91,255,0.08)] transition-all-custom border border-outline-variant/30" id="summary-accordion">
+<button class="w-full flex items-center justify-between p-4 bg-primary-container text-on-primary-container" onclick="toggleAccordion()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-md text-label-md">Resumen del Viaje</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-300" id="accordion-icon">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white" id="accordion-content" style="max-height: 0px;">
+<div class="p-4 space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Origen</span>
+<span class="font-headline-md text-headline-md text-on-surface">Madrid Sur</span>
+</div>
+<span class="material-symbols-outlined text-primary-container">arrow_forward</span>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Destino</span>
+<span class="font-headline-md text-headline-md text-on-surface">Barcelona Sants</span>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30 w-full"></div>
+<div class="flex justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Fecha</span>
+<span class="font-body-md text-body-md font-bold">24 Oct, 2023</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary">Precio Total</span>
+<span class="font-body-md text-body-md font-bold text-primary">$45.50</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Passenger Data Form -->
+<section class="space-y-6">
+<header>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Datos del Pasajero</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Por favor, introduce los datos tal como aparecen en tu documento oficial.</p>
+</header>
+<form class="space-y-5">
+<!-- Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="name">Nombre</label>
+<div class="relative group">
+<input class="w-full h-14 px-4 rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="name" placeholder="Ej: Juan" type="text">
+</div>
+</div>
+<!-- Surname -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="surname">Apellidos</label>
+<input class="w-full h-14 px-4 rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="surname" placeholder="Ej: García Pérez" type="text">
+</div>
+<!-- Nationality -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="nationality">Nacionalidad</label>
+<div class="relative">
+<select class="w-full h-14 px-4 rounded-lg bg-surface-container border border-outline-variant appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="nationality">
+<option value="ES">España</option>
+<option value="MX">México</option>
+<option value="AR">Argentina</option>
+<option value="CO">Colombia</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- ID Grid -->
+<div class="grid grid-cols-12 gap-3">
+<div class="col-span-5 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="id-type">Tipo Doc.</label>
+<div class="relative">
+<select class="w-full h-14 px-3 rounded-lg bg-surface-container border border-outline-variant appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="id-type">
+<option value="DNI">DNI</option>
+<option value="NIE">NIE</option>
+<option value="PASS">Pasaporte</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-secondary pointer-events-none scale-90">expand_more</span>
+</div>
+</div>
+<div class="col-span-7 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="id-number">Número ID</label>
+<input class="w-full h-14 px-4 rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="id-number" placeholder="12345678X" type="text">
+</div>
+</div>
+<!-- Sex & Birth Date Grid -->
+<div class="grid grid-cols-12 gap-3">
+<div class="col-span-4 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="sex">Sexo</label>
+<div class="relative">
+<select class="w-full h-14 px-3 rounded-lg bg-surface-container border border-outline-variant appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="sex">
+<option value="H">Hombre</option>
+<option value="M">Mujer</option>
+<option value="O">Otro</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-secondary pointer-events-none scale-90">expand_more</span>
+</div>
+</div>
+<div class="col-span-8 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="birth-date">Fecha de Nacimiento</label>
+<input class="w-full h-14 px-4 rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md transition-all-custom" id="birth-date" max="2026-05-24" min="2026-05-24" placeholder="2026-05-24" type="date">
+</div>
+</div>
+</form>
+</section>
+<!-- Aesthetic Card Decoration -->
+<div class="mt-8 relative overflow-hidden rounded-xl h-24 bg-primary-container/20 border border-primary-container/10 flex items-center px-4">
+<div class="z-10">
+<h4 class="font-label-md text-label-md text-primary font-bold">Viaja Seguro</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BlueLine Express incluye seguro de viaje en todos sus trayectos.</p>
+</div>
+<div class="absolute -right-6 -bottom-6 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: &quot;FILL&quot; 1;">verified_user</span>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar / Sticky CTA -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container dark:bg-inverse-surface shadow-[0px_-4px_20px_rgba(46,91,255,0.08)] px-md pb-8 pt-4">
+<button class="w-full h-16 bg-primary text-on-primary font-headline-md text-headline-md rounded-xl shadow-lg active:scale-95 transition-all-custom flex items-center justify-center gap-3" onclick="window.location.href='{{DATA:SCREEN:SCREEN_23}}'">
+            Continuar al Pago
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Hidden element for background visual interest -->
+<footer class="mt-12 mb-36 px-4 py-8 border-t border-outline-variant/30 text-center">
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">© 2026 BlueLine Express</p>
+<p class="font-label-sm text-label-sm text-secondary">Tu confianza es nuestro motor. Viajando juntos hacia el futuro.</p>
+</footer><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px]"></div>
+<div class="absolute bottom-[20%] left-[-10%] w-[250px] h-[250px] bg-secondary-container/10 rounded-full blur-[60px]"></div>
+</div>
+<script>
+        function toggleAccordion() {
+            const content = document.getElementById('accordion-content');
+            const icon = document.getElementById('accordion-icon');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Initialize accordion as closed
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.getElementById('accordion-content');
+            content.style.maxHeight = '0px';
+        });
+
+        // Micro-interaction for inputs
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

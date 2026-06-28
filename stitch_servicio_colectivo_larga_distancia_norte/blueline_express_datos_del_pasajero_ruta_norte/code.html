@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BlueLine Express - Passenger Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-fixed": "#e2e2e2", "surface-dim": "#ccdbf4", "on-primary-container": "#8590a6", surface: "#f8f9ff", primary: "#091426", "outline-variant": "#c5c6cd", "on-surface": "#0d1c2f", "surface-container-highest": "#d5e3fd", "secondary-container": "#fd761a", "on-surface-variant": "#45474c", "on-background": "#0d1c2f", "error-container": "#ffdad6", tertiary: "#131514", "on-secondary": "#ffffff", background: "#f8f9ff", "on-secondary-fixed": "#341100", "on-primary-fixed": "#111c2d", outline: "#75777d", secondary: "#9d4300", "primary-fixed-dim": "#bcc7de", "tertiary-container": "#272929", "on-tertiary-fixed": "#1a1c1c", "inverse-surface": "#233144", "on-tertiary-container": "#8f908f", error: "#ba1a1a", "inverse-on-surface": "#ebf1ff", "surface-tint": "#545f73", "on-secondary-fixed-variant": "#783200", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-secondary-container": "#5c2400", "primary-container": "#1e293b", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb690", "on-primary-fixed-variant": "#3c475a", "tertiary-fixed-dim": "#c6c7c6", "on-error-container": "#93000a", "primary-fixed": "#d8e3fb", "surface-container-high": "#dde9ff", "on-tertiary-fixed-variant": "#454747", "surface-bright": "#f8f9ff", "surface-container": "#e6eeff", "surface-container-low": "#eff4ff", "inverse-primary": "#bcc7de", "on-primary": "#ffffff", "surface-variant": "#d5e3fd", "secondary-fixed": "#ffdbca"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "24px", gutter: "16px", xl: "32px", sm: "8px", xs: "4px", base: "8px", md: "16px", lg: "24px"}, fontFamily: {"headline-lg": ["Inter"], "display-lg": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-md": ["Inter"], "body-md": ["Roboto Mono"], "label-sm": ["Hanken Grotesk"], "label-md": ["Roboto Mono"], headline: ["Inter"], display: ["Inter"], body: ["Roboto Mono"], label: ["Roboto Mono"]}, fontSize: {"headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", fontWeight: "500"}]}}}};</script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(46, 91, 255, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-outline-variant fixed top-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-margin md:px-gutter h-16 max-w-7xl mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">BlueLine Express</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Routes</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Schedules</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Accessibility</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-primary-container transition-all active:opacity-80">
+                Book Now
+            </button>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-xl px-margin md:px-gutter max-w-7xl mx-auto w-full">
+<!-- Step Indicator -->
+<div class="flex items-center gap-sm mb-lg">
+<div class="flex items-center gap-xs">
+<span class="w-8 h-8 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant flex items-center justify-center font-bold">1</span>
+<span class="hidden md:block font-label-md">Search</span>
+</div>
+<div class="h-px w-8 bg-outline-variant"></div>
+<div class="flex items-center gap-xs">
+<span class="w-8 h-8 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant flex items-center justify-center font-bold">2</span>
+<span class="hidden md:block font-label-md">Selection</span>
+</div>
+<div class="h-px w-8 bg-outline-variant"></div>
+<div class="flex items-center gap-xs">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">3</span>
+<span class="font-label-md text-primary font-bold">Passenger Data</span>
+</div>
+</div>
+<h1 class="text-headline-lg font-headline-lg mb-lg">Cargar datos de pasajeros</h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Form Section -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow border border-outline-variant overflow-hidden">
+<!-- Header Strip -->
+<div class="bg-surface-container-high p-md flex items-center justify-between">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">person</span>
+<span class="font-headline-md">Pasajero 1</span>
+</div>
+<div class="text-on-surface-variant">
+<p class="text-label-sm uppercase tracking-wider">Asiento Ida</p>
+<p class="font-headline-md font-bold">36</p>
+</div>
+</div>
+<!-- Personal Data Form -->
+<div class="p-md md:p-lg">
+<div class="flex justify-end mb-md">
+<button class="text-primary font-label-md hover:underline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">star</span>
+                                Completar con pasajero favorito
+                            </button>
+</div>
+<h2 class="text-headline-md mb-md">Datos personales</h2>
+<form class="space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Nombre*</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none transition-all" placeholder="Escribí el nombre" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Apellido*</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none transition-all" placeholder="Escribí el apellido" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Nacionalidad*</label>
+<select class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none appearance-none cursor-pointer">
+<option>Argentina</option>
+<option>Uruguay</option>
+<option>Chile</option>
+<option>Brasil</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Tipo de documento de identidad*</label>
+<select class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none cursor-pointer">
+<option>DNI</option>
+<option>Pasaporte</option>
+<option>Cédula</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Número de DNI*</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none transition-all" placeholder="Escribí el número de documento" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Sexo*</label>
+<select class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none cursor-pointer">
+<option disabled="" selected="">Seleccioná el sexo</option>
+<option>Masculino</option>
+<option>Femenino</option>
+<option>No binario</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-xs max-w-md">
+<label class="text-label-md font-label-md text-on-surface-variant">Fecha de nacimiento*</label>
+<div class="relative">
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright outline-none transition-all" placeholder="dd-mm-aaaa" type="text"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Sidebar Section -->
+<aside class="lg:col-span-4 space-y-gutter">
+<!-- Travel Details Card -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-high p-md flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">assignment</span>
+<h3 class="font-headline-md">Datos del viaje</h3>
+</div>
+<div class="p-md space-y-md">
+<div class="flex items-center gap-xs text-on-surface font-bold">
+<span class="material-symbols-outlined">arrow_forward</span>
+                            IDA
+                        </div>
+<div class="grid grid-cols-2 gap-md border-b border-outline-variant pb-md">
+<div>
+<p class="text-label-sm uppercase text-on-surface-variant">Origen</p>
+<p class="font-headline-md">Buenos Aires</p>
+<p class="text-label-sm text-on-surface-variant mt-xs">Salida</p>
+<p class="font-body-md font-bold">Jue 28 May</p>
+<p class="text-body-md">00:15hs</p>
+</div>
+<div>
+<p class="text-label-sm uppercase text-on-surface-variant">Destino</p>
+<p class="font-headline-md">San Salvador de Jujuy</p>
+<p class="text-label-sm text-on-surface-variant mt-xs">Llegada</p>
+<p class="font-body-md font-bold">Jue 28 May</p>
+<p class="text-body-md">05:30hs</p>
+</div>
+</div>
+<div class="text-body-md text-on-surface-variant border-b border-outline-variant pb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">route</span>
+                            Vía Santiago del Estero
+                        </div>
+<div class="flex justify-between items-end">
+<div>
+<p class="font-headline-md text-primary">Platabus</p>
+<p class="text-body-md text-on-surface-variant">Semi Cama</p>
+</div>
+<div class="text-right">
+<p class="text-label-sm text-on-surface-variant">Duración: 05h 15m</p>
+<button class="text-primary underline font-label-md">Ver recorrido</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Banner -->
+<div class="bg-secondary-container rounded-xl p-md flex gap-sm border border-outline-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-label-md text-on-secondary-container">
+                        ¿Viajas con menores? <a class="underline font-bold" href="#">Consultá la normativa vigente</a> y llevá impreso el formulario correspondiente.
+                    </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-md pt-md">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-headline-md ambient-shadow hover:bg-primary-container transition-all active:scale-[0.98]">
+                        Continuar al Pago
+                    </button>
+<button class="w-full bg-transparent border border-outline text-on-surface-variant py-4 rounded-full font-headline-md hover:bg-surface-variant transition-all">
+                        Volver
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest mt-auto">
+<div class="w-full py-gutter px-margin md:px-gutter max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter text-on-surface">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="text-label-lg font-label-lg font-bold text-primary">BlueLine Express</div>
+<p class="text-body-md text-on-surface-variant text-center md:text-left">© 2026 BlueLine Express. Reliable transit for everyone.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Contact Us</a>
+<a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Accessibility Statement</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.parentElement.closest('.bg-surface-container-lowest').style.borderColor = '#0040e0';
+            });
+            element.addEventListener('blur', () => {
+                element.parentElement.closest('.bg-surface-container-lowest').style.borderColor = 'transparent'; // resets but actually we have border-outline-variant
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BlueLine Express - Seat Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container": "#e6eeff", "tertiary-fixed-dim": "#c6c7c6", "surface-variant": "#d5e3fd", "on-background": "#0d1c2f", "surface-container-lowest": "#ffffff", primary: "#091426", outline: "#75777d", "secondary-fixed-dim": "#ffb690", tertiary: "#131514", "surface-bright": "#f8f9ff", "primary-container": "#1e293b", "outline-variant": "#c5c6cd", "surface-container-highest": "#d5e3fd", surface: "#f8f9ff", "tertiary-container": "#272929", "on-secondary-container": "#5c2400", "on-tertiary-fixed": "#1a1c1c", error: "#ba1a1a", "on-error-container": "#93000a", "surface-dim": "#ccdbf4", "surface-container-high": "#dde9ff", secondary: "#9d4300", "on-tertiary-fixed-variant": "#454747", "on-error": "#ffffff", "error-container": "#ffdad6", "secondary-container": "#fd761a", "on-primary": "#ffffff", "on-surface": "#0d1c2f", "on-primary-fixed-variant": "#3c475a", "inverse-primary": "#bcc7de", "on-secondary-fixed-variant": "#783200", "surface-tint": "#545f73", "on-tertiary": "#ffffff", "on-tertiary-container": "#8f908f", "primary-fixed-dim": "#bcc7de", "on-secondary-fixed": "#341100", "secondary-fixed": "#ffdbca", "inverse-surface": "#233144", "inverse-on-surface": "#ebf1ff", "primary-fixed": "#d8e3fb", "on-surface-variant": "#45474c", "tertiary-fixed": "#e2e2e2", "on-secondary": "#ffffff", "on-primary-fixed": "#111c2d", background: "#f8f9ff", "surface-container-low": "#eff4ff", "on-primary-container": "#8590a6"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {gutter: "16px", base: "8px", margin: "24px", sm: "8px", xl: "32px", md: "16px", xs: "4px", lg: "24px"}, fontFamily: {"label-md": ["Roboto Mono"], "headline-lg": ["Inter"], "body-md": ["Roboto Mono"], "headline-md": ["Inter"], "display-lg": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], headline: ["Inter"], display: ["Inter"], body: ["Roboto Mono"], label: ["Roboto Mono"]}, fontSize: {"label-md": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}]}}}};</script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .seat-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .seat-available { background-color: #b7c8e1; }
+        .seat-selected { background-color: #0040e0; color: white; transform: scale(1.05); box-shadow: 0 4px 12px rgba(0, 64, 224, 0.3); }
+        .seat-occupied { background-color: #434656; color: rgba(255, 255, 255, 0.5); cursor: not-allowed; }
+        .bus-container {
+            position: relative;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-touch-target-min max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">BlueLine Express</div>
+<div class="hidden md:flex gap-md">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Routes</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Schedules</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Accessibility</a>
+</div>
+<button class="bg-primary text-on-primary px-gutter py-2 rounded-lg font-label-md text-label-md active:opacity-80 transition-all">Book Now</button>
+</nav>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter">
+<!-- Step Indicator -->
+<div class="flex items-center gap-xs mb-lg">
+<div class="flex items-center gap-base">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">1</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Journey Details</span>
+</div>
+<div class="w-12 h-px bg-outline-variant"></div>
+<div class="flex items-center gap-base">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-sm shadow-md">2</span>
+<span class="text-label-md font-label-md text-primary font-bold">Seat Selection</span>
+</div>
+<div class="w-12 h-px bg-outline-variant"></div>
+<div class="flex items-center gap-base">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold text-label-sm">3</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Payment</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Bus Interior Graphic & Seat Grid -->
+<section class="lg:col-span-8 bg-surface-container-low rounded-xl p-gutter shadow-sm flex flex-col items-center">
+<div class="w-full flex justify-between items-center mb-md px-base">
+<h2 class="text-headline-md font-headline-md text-on-surface">Select Your Seats</h2>
+<!-- Legend -->
+<div class="flex gap-md flex-wrap">
+<div class="flex items-center gap-base">
+<div class="w-4 h-4 rounded-sm seat-available"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Available</span>
+</div>
+<div class="flex items-center gap-base">
+<div class="w-4 h-4 rounded-sm seat-selected"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Selected</span>
+</div>
+<div class="flex items-center gap-base">
+<div class="w-4 h-4 rounded-sm seat-occupied flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px]" style='font-variation-settings: "FILL" 1;'>close</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Occupied</span>
+</div>
+</div>
+</div>
+<!-- Bus Visualization Overlay -->
+<div class="relative w-full max-w-[500px] bg-surface-container-lowest rounded-[48px] border-4 border-outline-variant p-gutter shadow-lg overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface-dim/20 to-transparent pointer-events-none"></div>
+<!-- Front Section -->
+<div class="flex justify-between items-start mb-lg px-gutter">
+<div class="flex flex-col items-center gap-base">
+<span class="text-label-sm font-bold tracking-widest text-outline uppercase">Front</span>
+<div class="w-16 h-16 bg-surface-variant rounded-xl flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[32px]">steering_wheel_heat</span>
+</div>
+<span class="text-label-sm font-bold text-on-surface-variant">DRIVER</span>
+</div>
+<div class="flex flex-col items-end gap-base text-right">
+<div class="flex items-center gap-base text-primary">
+<span class="material-symbols-outlined">accessible</span>
+<span class="text-label-sm font-bold">ACCESSIBILITY SPACE</span>
+</div>
+</div>
+</div>
+<!-- Seats Layout -->
+<div class="grid grid-cols-4 gap-x-4 gap-y-6 px-4">
+<!-- Iterative Seat Generation for Simulation -->
+<!-- Row 1 -->
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-1A" onclick="toggleSeat('1A')">1A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md mr-12" id="seat-1B" onclick="toggleSeat('1B')">1B</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md ml-12">2A</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md">2B</button>
+<!-- Row 2 -->
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-3A" onclick="toggleSeat('3A')">3A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md mr-12" id="seat-3B" onclick="toggleSeat('3B')">3B</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md ml-12">4A</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md">4B</button>
+<!-- Row 3 -->
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-5A" onclick="toggleSeat('5A')">5A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md mr-12" id="seat-5B" onclick="toggleSeat('5B')">5B</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md ml-12" id="seat-6A" onclick="toggleSeat('6A')">6A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-6B" onclick="toggleSeat('6B')">6B</button>
+<!-- Row 4 (Occupied) -->
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center mr-12"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center ml-12"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<!-- Row 5 -->
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-7A" onclick="toggleSeat('7A')">7A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md mr-12" id="seat-7B" onclick="toggleSeat('7B')">7B</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md ml-12">8A</button>
+<button class="seat-btn seat-selected w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md">8B</button>
+<!-- Row 6 -->
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md" id="seat-9A" onclick="toggleSeat('9A')">9A</button>
+<button class="seat-btn seat-available w-full aspect-square rounded-lg flex items-center justify-center font-bold text-label-md mr-12" id="seat-9B" onclick="toggleSeat('9B')">9B</button>
+<button class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center ml-12" id="seat-10A" onclick="toggleSeat('10A')"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<button class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center" id="seat-10B" onclick="toggleSeat('10B')"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<!-- Last Row (Occupied) -->
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center mr-12"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center ml-12"><span class="material-symbols-outlined text-[18px]">close</span></div>
+<div class="seat-btn seat-occupied w-full aspect-square rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">close</span></div>
+</div>
+<div class="w-full text-center mt-lg">
+<span class="text-label-sm font-bold tracking-widest text-outline uppercase">Back</span>
+</div>
+</div>
+<div class="mt-lg w-full max-w-[500px]">
+<img alt="Bus Interior View" class="w-full h-32 object-cover rounded-xl shadow-inner border border-outline-variant" data-alt="A highly detailed 3D interior rendering of a modern transit bus with high-back navy blue seats and a sleek grey floor. Sunlight streams through large panoramic windows, casting soft shadows across the cabin. The environment is impeccably clean with a professional, high-end atmosphere. Soft warm interior lighting highlights the metallic grab bars and digital signage screens." src="https://lh3.googleusercontent.com/aida/ADBb0uiEHyzzWzA7meHchIf4DykIgmj3kdcV7D2WWriTqfj9a8fddWLIVnFT5FeaMwIcu1WCLjKgul0rpuose_tVHMSkZz5UJGJfCCF1NeSYtP76gGox98WhfMzZTp_WroSkkRAl79QsDJNiSNmcj6ewaGa8-g6XUGsvD3EXaomMkcy1dQXMuyZjaR0rRmPy267mF6UhPPzTsgP5mWSgCUos_Kebkf9dvLY26dpDPAAd_qEmNH3GuWcpJR7eHmU"/>
+</div>
+</section>
+<!-- Right: Summary Sidebar -->
+<aside class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="glass-panel rounded-xl p-gutter shadow-lg">
+<h3 class="text-headline-md font-headline-md text-primary mb-md">Trip Summary</h3>
+<!-- Route Details -->
+<div class="flex flex-col gap-base mb-lg pb-base border-b border-outline-variant/30">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="text-body-md font-bold">Buenos Aires → San Salvador de Jujuy</span>
+</div>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span class="text-body-md">Oct 24, 2026 · 09:30 AM</span>
+</div>
+</div>
+<!-- Selected Seats -->
+<div class="mb-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block mb-base">Selected Seats</span>
+<div class="flex flex-wrap gap-base" id="selected-seats-container">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                2A <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                2B <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                4A <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                4B <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                8A <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold text-label-md flex items-center gap-base">
+                                8B <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+</div>
+</div>
+<!-- Pricing -->
+<div class="flex flex-col gap-base mb-lg">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span class="">Base Fare (6x)</span>
+<span class="">$150.00</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span class="">Platform Fee</span>
+<span class="">$4.50</span>
+</div>
+<div class="flex justify-between text-headline-md font-headline-md text-on-surface mt-base pt-base border-t border-outline-variant">
+<span class="">Total</span>
+<span class="text-primary">$154.50</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-gutter rounded-xl font-headline-md text-headline-md shadow-lg hover:shadow-xl active:scale-[0.98] transition-all">
+                        Continuar
+                    </button>
+</div>
+<!-- Accessibility Note -->
+<div class="bg-secondary-container/30 border border-secondary-container p-md rounded-xl">
+<div class="flex items-start gap-base">
+<span class="material-symbols-outlined text-tertiary">info</span>
+<div>
+<p class="text-label-md font-bold text-on-secondary-container">Note on Front Row Seats</p>
+<p class="text-label-sm text-on-secondary-container/80 mt-xs leading-relaxed">Front row seats are prioritized for elderly and passengers with disabilities. Please be mindful of our community guidelines.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest mt-xl">
+<div class="w-full py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-unit">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="text-label-lg font-label-lg font-bold text-primary">BlueLine Express</div>
+<div class="font-body-md text-body-md text-on-surface-variant">© 2026 BlueLine Express. Transporte confiable para todos.</div>
+</div>
+<div class="flex gap-md mt-md md:mt-0">
+</div>
+</div>
+</footer>
+<script>
+        function toggleSeat(seatId) {
+            const btn = document.getElementById(`seat-${seatId}`);
+            if (btn.classList.contains('seat-available')) {
+                btn.classList.remove('seat-available');
+                btn.classList.add('seat-selected');
+                // Normally we would add to a list here
+            } else if (btn.classList.contains('seat-selected')) {
+                btn.classList.remove('seat-selected');
+                btn.classList.add('seat-available');
+                // Normally we would remove from list here
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BlueLine Express - Buscar Viajes</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed": "#feddb3", "inverse-surface": "#352f29", "inverse-on-surface": "#faefe5", "primary-fixed": "#ffddb1", "on-surface-variant": "#504538", "tertiary-fixed": "#ebe941", "on-secondary": "#ffffff", "on-primary-fixed": "#291800", background: "#fff8f4", "surface-container-low": "#fdf2e8", "on-primary-container": "#ffc97d", "on-tertiary-container": "#424100", "primary-fixed-dim": "#f6bc68", "on-secondary-fixed": "#281801", "on-primary-fixed-variant": "#624000", "inverse-primary": "#f6bc68", "on-secondary-fixed-variant": "#584324", "surface-tint": "#805604", "on-tertiary": "#ffffff", "secondary-container": "#feddb3", "on-primary": "#ffffff", "on-surface": "#201b15", "on-error-container": "#93000a", "surface-dim": "#e3d8cf", "surface-container-high": "#f1e6dc", secondary: "#725a39", "on-tertiary-fixed-variant": "#4a4900", "on-error": "#ffffff", "error-container": "#ffdad6", "outline-variant": "#d4c4b2", "surface-container-highest": "#ebe1d7", surface: "#fff8f4", "tertiary-container": "#b2b000", "on-secondary-container": "#78603f", "on-tertiary-fixed": "#1d1d00", error: "#ba1a1a", "surface-container-lowest": "#ffffff", primary: "#5d3c00", outline: "#827566", "secondary-fixed-dim": "#e1c299", tertiary: "#626100", "surface-bright": "#fff8f4", "primary-container": "#7c5200", "surface-container": "#f7ece2", "tertiary-fixed-dim": "#cecc22", "surface-variant": "#ebe1d7", "on-background": "#201b15"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {sm: "12px", gutter: "24px", base: "8px", margin: "32px", xs: "4px", lg: "48px", xl: "80px", md: "24px"}, fontFamily: {"label-sm": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}]}}}};</script>
+<style>
+      body {
+        font-family: 'Hanken Grotesk', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 w-full bg-surface shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="directions_bus">directions_bus</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">BlueLine Express</h1>
+</div>
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-16 px-4 py-6 space-y-gutter max-w-2xl mx-auto">
+<!-- Welcome Section -->
+<section class="space-y-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">¿A dónde viajamos hoy?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Encuentra los mejores precios en tus rutas favoritas.</p>
+</section>
+<!-- Search Form Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0px_4px_20px_rgba(46,91,255,0.08)] space-y-4">
+<!-- Origen y Destino -->
+<div class="space-y-3">
+<div class="relative">
+<label class="block font-label-md text-label-md text-outline mb-1">Origen</label>
+<div class="flex items-center border border-outline-variant rounded-lg p-3 hover:border-primary focus-within:border-primary transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="trip_origin">trip_origin</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-on-surface" placeholder="Pehuajo" type="text" value="Buenos Aires">
+</div>
+</div>
+<!-- Swap Button Asymmetric Element -->
+<div class="flex justify-end -my-5 relative z-10 pr-6">
+<button class="bg-primary text-on-primary p-2 rounded-full shadow-lg active:scale-90 transition-transform" onclick="window.location.href='{{DATA:SCREEN:SCREEN_21}}'">
+<span class="material-symbols-outlined" data-icon="swap_vert">swap_vert</span>
+</button>
+</div>
+<div class="relative">
+<label class="block font-label-md text-label-md text-outline mb-1">Destino</label>
+<div class="flex items-center border border-outline-variant rounded-lg p-3 hover:border-primary focus-within:border-primary transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="location_on">location_on</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-on-surface" placeholder="Mar del Plata" type="text">
+</div>
+</div>
+</div>
+<!-- Fechas -->
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-outline">Salida</label>
+<div class="flex items-center border border-outline-variant rounded-lg p-3 hover:border-primary focus-within:border-primary transition-all bg-surface">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md">15 Oct</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-outline">Regreso</label>
+<div class="flex items-center border border-outline-variant border-dashed rounded-lg p-3 hover:border-primary focus-within:border-primary transition-all bg-surface-container-low">
+<span class="material-symbols-outlined text-outline-variant mr-2" data-icon="add">add</span>
+<span class="font-body-md text-body-md text-outline">Opcional</span>
+</div>
+</div>
+</div>
+<!-- Pasajeros -->
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-outline">Pasajeros</label>
+<div class="flex items-center justify-between border border-outline-variant rounded-lg p-3 bg-surface">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="person">person</span>
+<span class="font-body-md text-body-md text-on-surface">1 Pasajero</span>
+</div>
+<div class="flex gap-4">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-high text-primary active:scale-95"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-on-primary active:scale-95" onclick="window.location.href='{{DATA:SCREEN:SCREEN_21}}'"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-all hover:bg-primary-container hover:text-on-primary-container" onclick="window.location.href='{{DATA:SCREEN:SCREEN_21}}'">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+                Buscar Viajes
+            </button>
+</div>
+<!-- Popular Destinations (Bento Style) -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">Destinos Populares</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Ver todos</a>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic wide shot of a pristine coastal city with high-rise buildings overlooking a deep blue ocean during a bright afternoon. The lighting is crisp and modern, emphasizing a sense of premium travel and professional reliability. The color palette features cool blues and warm architectural tones, creating an inviting and high-energy atmosphere for a traveler." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN-c9RDldhBkqqs37iAvyVj5bz297-0VTCrKUB1A7fDasgxH60BxxujS8om4yvQGQuOeZ8mjv0dA0FoeHGthOjr5qqlw2pEDLd1fSFJs-JeHnvahJLO6EV82_-MDoDVNV5qYbGG5iMpxHYvnavtwpaTuOaeUEvYwF2ti1TVwzdm-INoswU33lT2EGQUTm0D79EuJ7_6NGU_KG3OYrYbh3Ph-6oMx6kGgL8qALku5vbXwYK897Mcb0WnKn4js2-hsgV1ivWMAMlo3Yz">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3">
+<p class="font-label-sm text-label-sm text-white/80 uppercase">Costa Atlántica</p>
+<h4 class="font-headline-md text-headline-md text-white">Mar del Plata</h4>
+</div>
+</div>
+<div class="space-y-3">
+<div class="relative h-[90px] rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated mountain landscape with snow-capped peaks under a vibrant blue sky during golden hour. The visual style is professional and adventurous, using a palette of deep blues and vibrant orange light. The mood is serene yet inspiring, perfectly capturing the essence of high-quality mountain travel and exploration for a modern fintech-travel application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmo1WOyKxs8btPQPpEpOBRZLFmdB_dFYTlaIl8qgH5ZDC3r9-zERBBmCbwqYVmLw5tjOD19T1er7al2xrOJSFgD5OzcT2Nl2Ct4fMcoeKiykaxyFeIuMWFXaBzukH2-_1neT8JNQbSKtKcbmRnZityQVoaGOJJAWeUL6vAAsgAxGCVZr8mAkNvivR7U2q3Atx2tstAFUsW7NWRACzk_ZBGmktxKGH6vsDuqWC0E8gmVMK27Wpew_BQFX0sqyAaQmiHe_FGaBHDR5-f">
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<h4 class="font-label-md text-label-md text-white font-bold">Bariloche</h4>
+</div>
+</div>
+<div class="relative h-[90px] rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lush green mountain range with mist rolling through the valleys, showcasing a vibrant and energetic natural environment. The lighting is soft and diffused, creating a glassmorphism feel when integrated with the UI. The primary colors are deep forest greens and bright sky blues, evoking feelings of efficiency and natural beauty for a modern bus travel platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1VuGzFnJa_r5YdseSPrQmQutYl5R7z-qH49Ne_ROQTHkSn3F1tliaTd1I63FyZsx2H6x509w67C6tApc8fyLaL9IVNa-KZJsPFu-p6gvh3SNl21DDacaL1iJ6Q5IrIIKPNVVkBbre6x60vrMLosMCaxiGrx0tDtokGRe4_aI2oOocPp4NYLZ4tVWCn8QAvMx0HR1CnvmSPZDwkEjnIv7ZMbwYznau6koBR-WASP2by5PB54PrMAvOl4hvRYRy9I7y5EgixPtzQ6ad">
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<h4 class="font-label-md text-label-md text-white font-bold">Mendoza</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Searches -->
+<section class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Últimas Búsquedas</h3>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+<div class="flex-shrink-0 bg-surface-container-low p-3 rounded-lg flex items-center gap-3 border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="history">history</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Córdoba → Rosario</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 Pasajeros • 22 Oct</p>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-container-low p-3 rounded-lg flex items-center gap-3 border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="history">history</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">CABA → Pinamar</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">1 Pasajero • 19 Oct</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface shadow-[0px_-4px_20px_rgba(46,91,255,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: &quot;FILL&quot; 1;">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_21}}">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-sm text-label-sm">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Footer (Only content-specific portion shown for splash screens, but following JSON structure) -->
+<footer class="w-full px-4 py-8 flex flex-col items-center gap-4 text-center bg-surface-container-lowest border-t border-outline-variant mb-20">
+<div class="font-label-md text-label-md font-black text-primary">BlueLine Express</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Help Center</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 BlueLine Express</p>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Haptic feedback simulation or ripple could go here
+            });
+        });
+    </script>
+</body></html>

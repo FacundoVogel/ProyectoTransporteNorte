@@ -1,0 +1,138 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ticket-cutout-left {
+            clip-path: circle(12px at 0 50%);
+        }
+        .ticket-cutout-right {
+            clip-path: circle(12px at 100% 50%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {secondary: "#725a39", "surface-variant": "#ebe1d7", "primary-fixed-dim": "#f6bc68", "on-primary-fixed-variant": "#624000", "surface-bright": "#fff8f4", background: "#fff8f4", "on-secondary-container": "#78603f", "on-error-container": "#93000a", "tertiary-fixed": "#ebe941", tertiary: "#626100", "on-surface-variant": "#504538", "on-secondary-fixed-variant": "#584324", "surface-dim": "#e3d8cf", "secondary-container": "#feddb3", "on-tertiary-fixed": "#1d1d00", "on-error": "#ffffff", outline: "#827566", "on-primary-container": "#ffc97d", "surface-container-lowest": "#ffffff", surface: "#fff8f4", "surface-container-highest": "#ebe1d7", "surface-container": "#f7ece2", "on-background": "#201b15", "surface-tint": "#805604", "outline-variant": "#d4c4b2", "surface-container-low": "#fdf2e8", "on-primary": "#ffffff", "on-tertiary-container": "#424100", error: "#ba1a1a", "tertiary-fixed-dim": "#cecc22", "inverse-surface": "#352f29", primary: "#5d3c00", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "on-secondary-fixed": "#281801", "on-surface": "#201b15", "on-primary-fixed": "#291800", "primary-container": "#7c5200", "on-secondary": "#ffffff", "surface-container-high": "#f1e6dc", "secondary-fixed": "#feddb3", "inverse-on-surface": "#faefe5", "tertiary-container": "#b2b000", "on-tertiary-fixed-variant": "#4a4900", "inverse-primary": "#f6bc68", "secondary-fixed-dim": "#e1c299", "primary-fixed": "#ffddb1"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {xs: "4px", sm: "12px", md: "24px", margin: "32px", gutter: "24px", xl: "80px", lg: "48px", base: "8px"}, fontFamily: {"label-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}]}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar Shell (Suppressed Leading Icon for Focus) -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-md h-16 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="directions_bus">directions_bus</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">BlueLine Express</span>
+</div>
+<a class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50 transition-colors active:scale-95 duration-100 ease-in-out" href="{{DATA:SCREEN:SCREEN_15}}" style="opacity: 0;">
+<span class="material-symbols-outlined text-secondary" data-icon="close">close</span>
+</a>
+</header>
+<main class="flex-grow pt-24 pb-12 px-margin flex flex-col items-center max-w-md mx-auto w-full">
+<!-- Success Animation/Icon -->
+<div class="mb-lg flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mb-md shadow-[0px_4px_20px_rgba(46,91,255,0.2)]">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background text-center">¡Reserva Confirmada!</h1>
+<p class="font-body-md text-body-md text-secondary text-center mt-xs">Tu viaje está listo. Hemos enviado los detalles a tu correo.</p>
+</div>
+<!-- Central Ticket Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(46,91,255,0.08)] overflow-hidden relative border border-outline-variant/30">
+<!-- Ticket Top Section -->
+<div class="p-md bg-primary/5 border-b border-dashed border-outline-variant relative">
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Reserva ID</span>
+<span class="font-label-md text-label-md text-primary font-bold">#BLE-88231</span>
+</div>
+<div class="flex justify-between items-center gap-md">
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-secondary">Salida</p>
+<p class="font-headline-md text-headline-md text-on-background">08:30</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pehuajo</p>
+</div>
+<div class="flex flex-col items-center px-sm">
+<span class="material-symbols-outlined text-primary" data-icon="trending_flat">trending_flat</span>
+<span class="font-label-sm text-label-sm text-outline">3h 45m</span>
+</div>
+<div class="flex-1 text-right">
+<p class="font-label-sm text-label-sm text-secondary">Llegada</p>
+<p class="font-headline-md text-headline-md text-on-background">12:15</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Mar del plata</p>
+</div>
+</div>
+<!-- Ticket Cutouts -->
+<div class="absolute -bottom-3 -left-3 w-6 h-6 bg-background rounded-full border border-outline-variant/30"></div>
+<div class="absolute -bottom-3 -right-3 w-6 h-6 bg-background rounded-full border border-outline-variant/30"></div>
+</div>
+<!-- Ticket Details Section -->
+<div class="p-md space-y-md">
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Pasajero</p>
+<p class="font-label-md text-label-md text-on-background">Alejandro García</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">Asiento</p>
+<p class="font-label-md text-label-md text-on-background">14A (Ventana)</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Tipo de Bus</p>
+<p class="font-label-md text-label-md text-on-background">Premium Class</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">Fecha</p>
+<p class="font-label-md text-label-md text-on-background">24 Oct, 2026</p>
+</div><div class="col-span-2 pt-2 border-t border-dashed border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-secondary">Total Pagado</p>
+<p class="font-headline-md text-headline-md text-on-background">ARS 45.500</p>
+</div>
+</div>
+<!-- QR Code Section -->
+<div class="flex flex-col items-center pt-md border-t border-outline-variant/20">
+<div class="bg-white p-sm rounded-lg shadow-sm border border-outline-variant/10">
+<img alt="Ticket QR Code" class="w-32 h-32" data-alt="A high-contrast, professional QR code displayed on a clean white background within a mobile application interface. The surrounding UI is minimalist with soft blue shadows and rounded corners, following a premium fintech aesthetic. The lighting is bright and even, evoking a sense of digital security and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAucVH4cDXUghSF3Sb0VLOx8avfXutlwtXN0q361Ck5wwUE506zouslAii92o444P2gKrvOUt5N4FV5-LSfBa_aW0u9KbUzl3cEZiJVpzk_tYsSqYQoLiIxU0npCifJowxv6Ymmo702xoFTyWHuVb7RTjvZdMcsk8T05FqEr2E-hoPryVIUCfKJ-8zHT5WRHOjmJLV0tOXKkKMoSYOlZ-nsoIQ--e2Oi7qyDFUTVrBbt0OZNE1y-ySRGPzHs9LUcwWrvCtqVYx3bYFf">
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-sm">Escanea al abordar</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full mt-lg space-y-sm">
+<button class="w-full py-4 bg-primary text-on-primary font-label-md text-label-md rounded-xl shadow-[0px_4px_20px_rgba(46,91,255,0.15)] hover:bg-primary/90 transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                Descargar Ticket (PDF)
+            </button>
+<a class="w-full py-4 bg-surface text-primary border border-primary/20 font-label-md text-label-md rounded-xl hover:bg-surface-variant/20 transition-all active:scale-95 flex items-center justify-center gap-sm" href="{{DATA:SCREEN:SCREEN_15}}">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                Volver al Inicio
+            </a>
+</div>
+<!-- Contextual Help -->
+<div class="mt-xl flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm text-secondary">¿Necesitas ayuda? Contacta a soporte</span>
+</div><div class="mt-4 flex items-center justify-center opacity-60"><span class="font-label-sm text-label-sm text-secondary">© 2026 BlueLine Express</span></div>
+</main>
+<!-- Interactive script for button micro-interactions -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.classList.add('scale-95');
+            });
+            button.addEventListener('touchend', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>

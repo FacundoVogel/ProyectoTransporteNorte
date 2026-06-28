@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BlueLine Express - Service Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-fixed": "#ebe941", "surface-dim": "#e3d8cf", "on-primary-container": "#ffc97d", surface: "#fff8f4", primary: "#5d3c00", "outline-variant": "#d4c4b2", "on-surface": "#201b15", "surface-container-highest": "#ebe1d7", "secondary-container": "#feddb3", "on-surface-variant": "#504538", "on-background": "#201b15", "error-container": "#ffdad6", tertiary: "#626100", "on-secondary": "#ffffff", background: "#fff8f4", "on-secondary-fixed": "#281801", "on-primary-fixed": "#291800", outline: "#827566", secondary: "#725a39", "primary-fixed-dim": "#f6bc68", "tertiary-container": "#b2b000", "on-tertiary-fixed": "#1d1d00", "inverse-surface": "#352f29", "on-tertiary-container": "#424100", error: "#ba1a1a", "inverse-on-surface": "#faefe5", "surface-tint": "#805604", "on-secondary-fixed-variant": "#584324", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-secondary-container": "#78603f", "primary-container": "#7c5200", "on-error": "#ffffff", "secondary-fixed-dim": "#e1c299", "on-primary-fixed-variant": "#624000", "tertiary-fixed-dim": "#cecc22", "on-error-container": "#93000a", "primary-fixed": "#ffddb1", "surface-container-high": "#f1e6dc", "on-tertiary-fixed-variant": "#4a4900", "surface-bright": "#fff8f4", "surface-container": "#f7ece2", "surface-container-low": "#fdf2e8", "inverse-primary": "#f6bc68", "on-primary": "#ffffff", "surface-variant": "#ebe1d7", "secondary-fixed": "#feddb3"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "32px", gutter: "24px", xl: "80px", sm: "12px", xs: "4px", base: "8px", md: "24px", lg: "48px"}, fontFamily: {"headline-lg": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "label-md": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}]}}}};</script>
+<style>
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(46, 91, 255, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest sticky top-0 z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin md:px-margin h-20 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-base"><span class="material-symbols-outlined text-primary text-3xl" style='font-variation-settings: "FILL" 1;'>directions_bus</span><span class="text-headline-md font-headline-md font-bold text-primary">BlueLine Express</span></div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Routes</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:opacity-80">
+                Book Now
+            </button>
+</nav>
+</header>
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin py-lg">
+<!-- Hero Section -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg mb-xs">Selecciona tu mejor opción</h1>
+<p class="text-on-surface-variant font-body-md text-body-md">Buenos Aires → San Salvador de Jujuy</p>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Service Card (Bento Style) -->
+<div class="lg:col-span-8 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden border border-outline-variant">
+<!-- Card Header -->
+<div class="p-md bg-surface-container-low flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="text-center md:text-left">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider mb-xs">Departure</p>
+<p class="text-headline-md font-headline-md">00:15hs</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Buenos Aires</p>
+</div>
+<div class="flex flex-col items-center gap-xs flex-grow px-lg">
+<span class="text-label-sm font-label-sm text-on-secondary-fixed-variant">5h 15m</span>
+<div class="w-full flex items-center gap-base"><span class="text-headline-md font-headline-md font-bold text-primary">                      BlueLine Express</span></div>
+<button class="text-primary font-label-md text-label-md hover:underline">Ver recorrido</button>
+</div>
+<div class="text-center md:text-right">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider mb-xs">Arrival</p>
+<p class="text-headline-md font-headline-md">05:30hs</p>
+<p class="text-body-md font-body-md text-on-surface-variant">San Salvador de Jujuy</p>
+</div>
+</div>
+<!-- Service Selection Rows -->
+<div class="p-md space-y-base">
+<!-- Option 1 -->
+<label class="group relative flex items-center justify-between p-md border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer has-[:checked]:border-primary-container has-[:checked]:bg-secondary-container/30">
+<input checked="" class="hidden peer" name="service" type="radio"/>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 transition-transform peer-checked:scale-100"></div>
+</div>
+<div>
+<p class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Semi Cama</p>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-md">person</span>
+<span class="text-label-md font-label-md">20 Available</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-outline">ARS</p>
+<p class="text-headline-md font-headline-md">35.000</p>
+<p class="text-label-sm font-label-sm text-outline">Por persona</p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="group relative flex items-center justify-between p-md border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer">
+<input class="hidden peer" name="service" type="radio"/>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 transition-transform peer-checked:scale-100"></div>
+</div>
+<div>
+<p class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Semicama</p>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-md">person</span>
+<span class="text-label-md font-label-md">23 Available</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-outline">ARS</p>
+<p class="text-headline-md font-headline-md">45.000</p>
+<p class="text-label-sm font-label-sm text-outline">Por persona</p>
+</div>
+</label>
+<!-- Option 3 (Alert) -->
+<label class="group relative flex items-center justify-between p-md border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer">
+<input class="hidden peer" name="service" type="radio"/>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 transition-transform peer-checked:scale-100"></div>
+</div>
+<div>
+<p class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Cama Ejecutivo</p>
+<div class="flex flex-wrap items-center gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant mr-base">
+<span class="material-symbols-outlined text-md">person</span>
+<span class="text-label-md font-label-md">8 Available</span>
+</div>
+<div class="bg-error-container text-on-error-container px-2 py-0.5 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>local_fire_department</span>
+                                            ¡Últimos asientos!
+                                        </div>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-outline">ARS</p>
+<p class="text-headline-md font-headline-md">50.000</p>
+<p class="text-label-sm font-label-sm text-outline">Por persona</p>
+</div>
+</label>
+<!-- Option 4 (Alert) -->
+<label class="group relative flex items-center justify-between p-md border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer">
+<input class="hidden peer" name="service" type="radio"/>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 transition-transform peer-checked:scale-100"></div>
+</div>
+<div>
+<p class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Cama Individual</p>
+<div class="flex flex-wrap items-center gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant mr-base">
+<span class="material-symbols-outlined text-md">person</span>
+<span class="text-label-md font-label-md">2 Available</span>
+</div>
+<div class="bg-error-container text-on-error-container px-2 py-0.5 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>local_fire_department</span>
+                                            ¡Últimos asientos!
+                                        </div>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-outline">ARS</p>
+<p class="text-headline-md font-headline-md">55.000</p>
+<p class="text-label-sm font-label-sm text-outline">Por persona</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Right: Summary & Action -->
+<div class="lg:col-span-4 space-y-gutter">
+<div class="bg-surface-container-lowest p-md rounded-xl ambient-shadow border border-outline-variant sticky top-24">
+<h2 class="font-headline-md text-headline-md mb-md">Summary</h2>
+<div class="space-y-sm mb-lg">
+<div class="flex justify-between items-center py-base border-b border-outline-variant">
+<span class="text-on-surface-variant font-label-md">Selected Class</span>
+<span class="font-bold text-primary">Semi Cama</span>
+</div>
+<div class="flex justify-between items-center py-base border-b border-outline-variant">
+<span class="text-on-surface-variant font-label-md">Base Fare</span>
+<span class="font-bold">ARS 35.000</span>
+</div>
+<div class="flex justify-between items-center py-base border-b border-outline-variant">
+<span class="text-on-surface-variant font-label-md">Taxes &amp; Fees</span>
+<span class="font-bold">ARS 2.450</span>
+</div>
+<div class="flex justify-between items-center py-md">
+<span class="text-headline-md font-headline-md">Total</span>
+<span class="text-headline-md font-headline-md text-primary">ARS 37.450</span>
+</div>
+</div>
+<button class="w-full text-on-primary py-4 rounded-xl font-headline-md text-headline-md hover:opacity-90 transition-all shadow-lg shadow-error/20 active:scale-[0.98] bg-primary">
+                        Seleccionar
+                    </button>
+<p class="text-center text-label-sm font-label-sm text-outline mt-md">
+                        Prices include all mandatory fees.
+                    </p>
+</div>
+<!-- Atmospheric Card -->
+<div class="relative h-48 rounded-xl overflow-hidden ambient-shadow group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious modern bus interior with plush leather seats and ambient blue mood lighting, emphasizing a premium travel experience. The composition is professional with shallow depth of field, capturing the essence of a high-speed transit SaaS brand. Soft daylight filters through large windows, creating a serene and efficient atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvwLdt7BG3Aa4JWPFRzjSEOOJRPE7y1Q-8Y_IIfAFx5O2SgP5DipjU5S40odyjXrUhgz5WRcYvPnkD2pqMtLO9haj78vUpnRGfefhcmErJGzLB5tHDUc6dDIqFgtBV4ZkJo3Wo7a-_uGnfd2x3DaKjt2XaMDal934HLwGsVuFXnZxp34p898ja8YN-JyjUfyCDCA11vxKkmswR2RzmcBrly640_w9NWUjiQsXVlF7jada9b5d9EF-jX9e2Z1uPlHn1p4tpMY_--Uf2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-md">
+<p class="text-on-primary font-headline-md text-white">Experience premium comfort on every journey.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest mt-auto">
+<div class="w-full py-gutter px-margin md:px-margin max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-unit">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<span class="text-label-lg font-label-lg font-bold text-primary">BlueLine Express</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">2026 BlueLine Express. Transporte para todos</p>
+</div>
+<div class="flex gap-md flex-wrap justify-center mt-md md:mt-0">
+<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors text-body-md font-body-md" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors text-body-md font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors text-body-md font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors text-body-md font-body-md" href="#">Accessibility Statement</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for radio selection
+        const radioButtons = document.querySelectorAll('input[name="service"]');
+        const summaryPrice = document.querySelector('.text-headline-md.text-primary');
+        const baseFare = document.querySelector('.space-y-sm div:nth-child(2) span:last-child');
+        const selectedClassText = document.querySelector('.space-y-sm div:first-child span:last-child');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const card = e.target.closest('label');
+                const price = card.querySelector('.text-headline-md').innerText;
+                const className = card.querySelector('p.font-headline-md').innerText;
+                
+                // Reset others
+                document.querySelectorAll('label').forEach(l => l.classList.remove('bg-secondary-container/30', 'border-primary-container'));
+                
+                // Set active
+                card.classList.add('bg-secondary-container/30', 'border-primary-container');
+                
+                // Update Summary
+                baseFare.innerText = `ARS ${price}`;
+                selectedClassText.innerText = className;
+                
+                const numericPrice = parseInt(price.replace('.', ''));
+                const tax = Math.round(numericPrice * 0.07);
+                const total = numericPrice + tax;
+                
+                summaryPrice.innerText = `ARS ${total.toLocaleString('es-AR')}`;
+                
+                // Micro-animation for price change
+                summaryPrice.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    summaryPrice.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

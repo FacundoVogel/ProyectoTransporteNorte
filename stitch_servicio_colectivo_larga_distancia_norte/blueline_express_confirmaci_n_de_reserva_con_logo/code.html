@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Reserva Confirmada | BlueLine Express</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-fixed": "#ebe941", "surface-dim": "#e3d8cf", "on-primary-container": "#ffc97d", surface: "#fff8f4", primary: "#5d3c00", "outline-variant": "#d4c4b2", "on-surface": "#201b15", "surface-container-highest": "#ebe1d7", "secondary-container": "#feddb3", "on-surface-variant": "#504538", "on-background": "#201b15", "error-container": "#ffdad6", tertiary: "#626100", "on-secondary": "#ffffff", background: "#fff8f4", "on-secondary-fixed": "#281801", "on-primary-fixed": "#291800", outline: "#827566", secondary: "#725a39", "primary-fixed-dim": "#f6bc68", "tertiary-container": "#b2b000", "on-tertiary-fixed": "#1d1d00", "inverse-surface": "#352f29", "on-tertiary-container": "#424100", error: "#ba1a1a", "inverse-on-surface": "#faefe5", "surface-tint": "#805604", "on-secondary-fixed-variant": "#584324", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-secondary-container": "#78603f", "primary-container": "#7c5200", "on-error": "#ffffff", "secondary-fixed-dim": "#e1c299", "on-primary-fixed-variant": "#624000", "tertiary-fixed-dim": "#cecc22", "on-error-container": "#93000a", "primary-fixed": "#ffddb1", "surface-container-high": "#f1e6dc", "on-tertiary-fixed-variant": "#4a4900", "surface-bright": "#fff8f4", "surface-container": "#f7ece2", "surface-container-low": "#fdf2e8", "inverse-primary": "#f6bc68", "on-primary": "#ffffff", "surface-variant": "#ebe1d7", "secondary-fixed": "#feddb3"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "32px", gutter: "24px", xl: "80px", sm: "12px", xs: "4px", base: "8px", md: "24px", lg: "48px"}, fontFamily: {"headline-lg": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "label-md": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}]}}}};</script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #faf8ff;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(46, 91, 255, 0.08);
+        }
+        .success-checkmark {
+            animation: scale-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes scale-up {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar Suppression: Shell Visibility & Relevance Filter applied -->
+<!-- Content prioritizes the success journey -->
+<main class="flex-grow flex items-center justify-center py-xl px-margin">
+<div class="max-w-[640px] w-full space-y-lg">
+<!-- Success Header -->
+<div class="text-center space-y-md">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-primary-container rounded-full success-checkmark ambient-shadow">
+<span class="material-symbols-outlined text-on-primary-container text-[40px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-xs">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Reserva Confirmada</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Tu viaje con BlueLine Express está asegurado. ¡Buen viaje!</p>
+</div>
+</div>
+<!-- Detailed Summary Card (Bento/Glassmorphism Inspired) -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden border border-outline-variant">
+<!-- Ticket Header -->
+<div class="bg-primary-container p-md flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-primary-container opacity-80 uppercase tracking-widest">ID DE RESERVA</span>
+<p class="font-headline-md text-headline-md text-on-primary-container">#BLE-88231</p>
+</div>
+<div class="px-md py-xs bg-white/20 rounded-full glass-effect">
+<span class="font-label-md text-label-md text-on-primary-container">Confirmado</span>
+</div>
+</div>
+<!-- Ticket Body -->
+<div class="p-md space-y-md">
+<!-- Route visualization -->
+<div class="flex items-center gap-md">
+<div class="flex-1 space-y-1">
+<p class="font-label-sm text-label-sm text-outline">Origen</p>
+<p class="font-headline-md text-headline-md text-on-surface">08:30 AM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Pehuajo</p>
+</div>
+<div class="flex flex-col items-center px-sm">
+<span class="material-symbols-outlined text-primary" data-icon="directions_bus">directions_bus</span>
+<div class="h-12 w-[2px] bg-gradient-to-b from-primary to-outline-variant my-1"></div>
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+</div>
+<div class="flex-1 space-y-1 text-right">
+<p class="font-label-sm text-label-sm text-outline">Destino</p>
+<p class="font-headline-md text-headline-md text-on-surface">11:45 AM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Buenos Aires</p>
+</div>
+</div>
+<hr class="border-outline-variant opacity-50">
+<!-- Passenger Details Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline">NOMBRE DEL PASAJERO</span>
+<p class="font-label-md text-label-md text-on-surface">Alexander Thompson</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline">NÚMERO DE ASIENTO</span>
+<p class="font-label-md text-label-md text-on-surface">Fila 04, Asiento 12A</p>
+</div>
+<div class="space-y-1 col-span-2 md:col-span-1">
+<span class="font-label-sm text-label-sm text-outline">TIPO DE BUS</span>
+<p class="font-label-md text-label-md text-on-surface">Express Executive Elite</p>
+</div>
+</div>
+<!-- Decorative Cutouts -->
+<div class="relative h-px bg-dashed border-t border-dashed border-outline-variant my-md">
+<div class="absolute -left-12 -top-3 w-6 h-6 bg-background rounded-full border-r border-outline-variant"></div>
+<div class="absolute -right-12 -top-3 w-6 h-6 bg-background rounded-full border-l border-outline-variant"></div>
+</div>
+<!-- QR and Additional Info -->
+<div class="flex flex-col md:flex-row items-center gap-md">
+<div class="w-32 h-32 p-base bg-white rounded-lg border border-outline-variant shrink-0">
+<div class="w-full h-full bg-surface-container flex items-center justify-center">
+<!-- QR Mockup -->
+<span class="material-symbols-outlined text-on-surface-variant text-6xl" data-icon="qr_code_2">qr_code_2</span>
+</div>
+</div>
+<div class="space-y-sm flex-1 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">Por favor, llega a la terminal al menos 20 minutos antes de la salida. Se aceptan boletos digitales e impresos.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-base py-1 rounded-full text-label-sm font-label-sm">Wi-Fi Gratis</span>
+<span class="bg-secondary-container text-on-secondary-container px-base py-1 rounded-full text-label-sm font-label-sm">Tomacorrientes</span>
+<span class="bg-secondary-container text-on-secondary-container px-base py-1 rounded-full text-label-sm font-label-sm">Espacio Extra para Piernas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col md:flex-row gap-md">
+<button class="flex-1 h-14 flex items-center justify-center gap-base bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary/90 transition-all active:scale-95 ambient-shadow">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Descargar Boleto (PDF)
+                </button>
+<button class="flex-1 h-14 flex items-center justify-center gap-base bg-white text-primary border border-primary font-label-md text-label-md rounded-lg hover:bg-surface-container-low transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                    Volver al Inicio
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer Component Integration from JSON -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-highest">
+<div class="w-full py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-unit">
+<div class="font-label-lg text-label-lg font-bold text-primary dark:text-primary flex items-center"><span class="material-symbols-outlined align-middle mr-2" data-icon="directions_bus">directions_bus</span>
+                BlueLine Express
+            </div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface py-base md:py-0">
+                ) 2026 BlueLine Express. Transporte confiable para todos.
+            </p>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="#">Contáctanos</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="#">Política de Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="#">Términos de Servicio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="#">Declaración de Accesibilidad</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the Download button
+        document.querySelector('button:has([data-icon="download"])').addEventListener('click', function() {
+            const originalContent = this.innerHTML;
+            this.innerHTML = `<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Generando...`;
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.innerHTML = `<span class="material-symbols-outlined" data-icon="check">check</span> Boleto Descargado`;
+                this.classList.replace('bg-primary', 'bg-tertiary');
+                setTimeout(() => {
+                    this.innerHTML = originalContent;
+                    this.classList.replace('bg-tertiary', 'bg-primary');
+                    this.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>
