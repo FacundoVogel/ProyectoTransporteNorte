@@ -130,6 +130,27 @@
   .campos-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* ----- Confirmación de reserva ----- */
+  /* Datos del pasajero en tres columnas. */
+  .ticket-pasajero {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* QR e info en fila. */
+  .ticket-qr {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .amenidades {
+    justify-content: flex-start;
+  }
+
+  /* Botones finales en fila. */
+  .confirmacion-acciones {
+    flex-direction: row;
+  }
 }
 
 /* ---------- TABLET (entre 600px y 768px) ---------- */

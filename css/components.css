@@ -1365,3 +1365,203 @@
   gap: var(--space-sm);
   margin-top: var(--space-md);
 }
+
+/* ============================================================
+   Bloques de la pantalla CONFIRMACIÓN DE RESERVA
+   (confirmacion-reserva.html)
+   ============================================================ */
+
+/* Contenedor centrado y angosto (foco en el éxito). */
+.confirmacion {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.confirmacion__exito {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* Círculo de éxito con tilde. */
+.exito-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+.exito-icono .material-symbols-outlined {
+  font-size: 40px;
+}
+
+.confirmacion__exito p {
+  margin-top: var(--space-xs);
+}
+
+/* ---------- Tarjeta del boleto ---------- */
+.ticket {
+  margin-bottom: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ticket__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+}
+
+.ticket__id-label {
+  display: block;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.ticket__id {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+.ticket__badge {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: var(--text-label);
+}
+
+.ticket__body {
+  padding: var(--space-lg);
+}
+
+/* Visualización de la ruta (origen → destino). */
+.ticket-ruta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.ticket-ruta__col {
+  flex: 1;
+}
+
+.ticket-ruta__col--destino {
+  text-align: right;
+}
+
+.ticket-ruta__hora {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+.ticket-ruta__lugar {
+  color: var(--color-on-surface-variant);
+}
+
+.ticket-ruta__centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-ruta__centro .material-symbols-outlined {
+  color: var(--color-primary);
+}
+
+.ticket-ruta__linea {
+  width: 2px;
+  height: 40px;
+  margin-block: var(--space-xs);
+  background-color: var(--color-outline-variant);
+}
+
+/* Línea de corte punteada del boleto. */
+.ticket-divisor {
+  border: none;
+  border-top: 1px dashed var(--color-outline-variant);
+  margin-block: var(--space-md);
+}
+
+/* Datos del pasajero. */
+.ticket-pasajero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.ticket-pasajero__label {
+  display: block;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-outline);
+}
+
+.ticket-pasajero__valor {
+  font-weight: var(--weight-medium);
+}
+
+/* QR + info de embarque. */
+.ticket-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+.qr-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 128px;
+  padding: var(--space-sm);
+  background-color: #ffffff;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius);
+}
+
+.qr-box .material-symbols-outlined {
+  font-size: 96px;
+  color: var(--color-primary);
+}
+
+.amenidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.chip-amenidad {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+  font-size: var(--text-label);
+}
+
+/* Botones de acción finales. */
+.confirmacion-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLine Express — Reserva confirmada</title>
+
+  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Íconos: Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Hojas de estilo (el orden importa por la cascada) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (compartido) ============ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="material-symbols-outlined">directions_bus</span>
+        <span class="logo__nombre">BlueLine Express</span>
+      </a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="detalles-servicio.html">Rutas</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="contenido">
+    <div class="contenedor">
+      <div class="confirmacion">
+
+        <!-- Encabezado de éxito -->
+        <div class="confirmacion__exito">
+          <div class="exito-icono">
+            <span class="material-symbols-outlined">check</span>
+          </div>
+          <h1>Reserva confirmada</h1>
+          <p>Tu viaje con BlueLine Express está asegurado. ¡Buen viaje!</p>
+        </div>
+
+        <!-- Tarjeta del boleto -->
+        <div class="ticket">
+          <div class="ticket__header">
+            <div>
+              <span class="ticket__id-label">ID de reserva</span>
+              <span class="ticket__id">#BLE-88231</span>
+            </div>
+            <span class="ticket__badge">Confirmado</span>
+          </div>
+
+          <div class="ticket__body">
+
+            <!-- Ruta -->
+            <div class="ticket-ruta">
+              <div class="ticket-ruta__col">
+                <p class="dato-label">Origen</p>
+                <p class="ticket-ruta__hora">00:15 hs</p>
+                <p class="ticket-ruta__lugar">Buenos Aires</p>
+              </div>
+              <div class="ticket-ruta__centro">
+                <span class="material-symbols-outlined">directions_bus</span>
+                <span class="ticket-ruta__linea"></span>
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div class="ticket-ruta__col ticket-ruta__col--destino">
+                <p class="dato-label">Destino</p>
+                <p class="ticket-ruta__hora">14:45 hs</p>
+                <p class="ticket-ruta__lugar">San Salvador de Jujuy</p>
+              </div>
+            </div>
+
+            <hr class="ticket-divisor">
+
+            <!-- Datos del pasajero -->
+            <div class="ticket-pasajero">
+              <div>
+                <span class="ticket-pasajero__label">Nombre del pasajero</span>
+                <p class="ticket-pasajero__valor">Juan Pérez</p>
+              </div>
+              <div>
+                <span class="ticket-pasajero__label">Número de asiento</span>
+                <p class="ticket-pasajero__valor">Fila 01, Asiento 2A</p>
+              </div>
+              <div>
+                <span class="ticket-pasajero__label">Tipo de servicio</span>
+                <p class="ticket-pasajero__valor">Semi Cama</p>
+              </div>
+            </div>
+
+            <hr class="ticket-divisor">
+
+            <!-- QR e info de embarque -->
+            <div class="ticket-qr">
+              <div class="qr-box">
+                <span class="material-symbols-outlined">qr_code_2</span>
+              </div>
+              <div class="ticket-qr__info">
+                <p>Por favor, llegá a la terminal al menos 20 minutos antes de la salida. Se aceptan boletos digitales e impresos.</p>
+                <div class="amenidades">
+                  <span class="chip-amenidad">Wi-Fi gratis</span>
+                  <span class="chip-amenidad">Tomacorrientes</span>
+                  <span class="chip-amenidad">Espacio extra para piernas</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Acciones finales -->
+        <div class="confirmacion-acciones">
+          <button type="button" class="btn btn-primario btn-bloque" data-descargar-boleto>
+            <span class="material-symbols-outlined">download</span>
+            Descargar boleto (PDF)
+          </button>
+          <a href="index.html" class="btn btn-outline btn-bloque">
+            <span class="material-symbols-outlined">home</span>
+            Volver al inicio
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="site-footer">
+    <div class="contenedor site-footer__inner">
+      <span class="site-footer__marca">BlueLine Express</span>
+      <nav class="site-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+        <a href="#">Centro de ayuda</a>
+      </nav>
+      <span class="site-footer__copy">© 2026 BlueLine Express — Transporte para todos</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript mínimo (feedback simulado de descarga) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -248,3 +248,25 @@ if (formDatos) {
     window.location.href = 'confirmacion-reserva.html';
   });
 }
+
+/* ------------------------------------------------------------
+   7) CONFIRMACIÓN — descarga de boleto simulada
+   No generamos un PDF real (es un mockup): al hacer click damos
+   una respuesta visual ("Boleto descargado") y volvemos al
+   estado original a los 2 segundos.
+   ------------------------------------------------------------ */
+const btnDescargar = document.querySelector('[data-descargar-boleto]');
+
+if (btnDescargar) {
+  btnDescargar.addEventListener('click', function () {
+    const contenidoOriginal = btnDescargar.innerHTML;
+    btnDescargar.innerHTML =
+      '<span class="material-symbols-outlined">check</span> Boleto descargado';
+    btnDescargar.disabled = true;
+
+    setTimeout(function () {
+      btnDescargar.innerHTML = contenidoOriginal;
+      btnDescargar.disabled = false;
+    }, 2000);
+  });
+}
