@@ -1,0 +1,51 @@
+/* ============================================================
+   responsive.css — Media queries (adaptación a cada pantalla)
+   Todas las reglas responsive juntas en un solo lugar.
+   Estrategia mobile-first: el CSS base sirve para móvil y acá
+   agregamos los ajustes para pantallas más grandes.
+   Breakpoint principal: 768px.
+   ============================================================ */
+
+/* ---------- MÓVIL (hasta 768px) ---------- */
+@media (max-width: 768px) {
+  /* Márgenes laterales más chicos en celular. */
+  .contenedor {
+    padding-inline: var(--margin-mobile);
+  }
+
+  /* El nombre de la marca se achica para no tapar la navegación. */
+  .logo__nombre {
+    font-size: var(--text-body);
+  }
+
+  /* La navegación deja un poco menos de aire entre links. */
+  .nav-principal ul {
+    gap: var(--space-md);
+  }
+}
+
+/* ---------- DESKTOP (desde 769px) ---------- */
+@media (min-width: 769px) {
+  /* El formulario de búsqueda no se estira a todo el ancho:
+     queda centrado y legible. */
+  .form-busqueda {
+    max-width: 720px;
+  }
+
+  /* Origen y destino en fila, con el botón de swap en el medio. */
+  .form-busqueda__ruta {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .form-busqueda__ruta .campo {
+    flex: 1;
+  }
+
+  /* El botón de swap deja de centrarse vertical y se alinea
+     con la base de los campos. */
+  .swap-btn {
+    align-self: flex-end;
+    margin-bottom: var(--space-xs);
+  }
+}

@@ -1,0 +1,249 @@
+/* ============================================================
+   components.css — Piezas reutilizables
+   Botones, tarjetas, inputs, contador, badges y cards de
+   destino. Componentes que se repiten en varias pantallas.
+   ============================================================ */
+
+/* ---------- BOTONES ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Al apretar, el botón "se hunde" un poquito. */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primario: slate oscuro (acción principal). */
+.btn-primario {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primary-container);
+  text-decoration: none;
+}
+
+/* Secundario: naranja (acento / CTA destacado). */
+.btn-secundario {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-secondary-container);
+  text-decoration: none;
+}
+
+/* Ocupa todo el ancho disponible. */
+.btn-bloque {
+  width: 100%;
+}
+
+/* ---------- TARJETA (contenedor genérico) ---------- */
+.tarjeta {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+/* ---------- CAMPOS DE FORMULARIO ---------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.campo__label {
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-outline);
+}
+
+/* Caja del control: ícono + input/select adentro de un borde. */
+.campo__control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-surface);
+  transition: border-color 0.2s;
+}
+
+/* Cuando el campo está enfocado, el borde se pinta de naranja. */
+.campo__control:focus-within {
+  border-color: var(--color-secondary);
+}
+
+.campo__control .material-symbols-outlined {
+  color: var(--color-outline);
+}
+
+/* El input/select ocupa todo el ancho y no trae borde propio
+   (el borde lo pone .campo__control). */
+.campo__control input,
+.campo__control select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--color-on-surface);
+  outline: none;
+}
+
+/* ---------- CONTADOR (pasajeros) ---------- */
+.contador {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contador__btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: transform 0.1s;
+}
+
+.contador__btn:active {
+  transform: scale(0.9);
+}
+
+.contador__btn--mas {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.contador__btn--menos {
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+}
+
+/* ---------- CARDS DE DESTINO ---------- */
+/* Tarjeta con fondo slate degradado y texto sobre ella. */
+.destino-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 140px;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    160deg,
+    var(--color-primary-container),
+    var(--color-primary)
+  );
+  color: var(--color-on-primary);
+  transition: transform 0.2s;
+}
+
+.destino-card:hover {
+  transform: translateY(-4px);
+  text-decoration: none;
+}
+
+.destino-card .material-symbols-outlined {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.destino-card__nombre {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-on-primary);
+}
+
+.destino-card__precio {
+  font-size: var(--text-label);
+  color: var(--color-on-primary);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   Bloques específicos de la pantalla de BÚSQUEDA (index.html)
+   ============================================================ */
+
+/* Encabezado de bienvenida. */
+.bienvenida {
+  margin-bottom: var(--space-lg);
+}
+
+.bienvenida p {
+  margin-top: var(--space-xs);
+}
+
+/* Formulario de búsqueda: campos apilados con separación. */
+.form-busqueda {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+/* Origen y destino con el botón de intercambio en el medio. */
+.form-busqueda__ruta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Botón de intercambiar origen/destino (swap). */
+.swap-btn {
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  transition: transform 0.1s;
+}
+
+.swap-btn:active {
+  transform: scale(0.9) rotate(180deg);
+}
+
+/* Fechas: dos columnas (salida / regreso). */
+.form-busqueda__fechas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* Fila de pasajeros: label/valor a la izquierda, botones a la derecha. */
+.form-busqueda__pasajeros .campo__control {
+  justify-content: space-between;
+}
+
+.pasajeros-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-on-surface);
+}
+
+/* Grilla de destinos populares: se adapta sola al ancho. */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}

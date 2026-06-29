@@ -1,0 +1,72 @@
+/* ============================================================
+   base.css — Estilos globales del sitio
+   Aplica el sistema de diseño a los elementos generales:
+   body, títulos, párrafos, enlaces. Lo que vale para "todo".
+   ============================================================ */
+
+/* El body usa el fondo y el color de texto del sistema, y la
+   tipografía de cuerpo (Roboto Mono) como base. */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
+  /* Suaviza el renderizado de la fuente. */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- TÍTULOS (Inter) ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headline);
+  color: var(--color-on-surface);
+  line-height: 1.25;
+}
+
+/* Título grande de página. */
+h1 {
+  font-size: var(--text-headline-lg);
+  font-weight: var(--weight-bold);
+}
+
+/* Títulos de sección. */
+h2,
+h3 {
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- TEXTO ---------- */
+p {
+  font-size: var(--text-body);
+  color: var(--color-on-surface-variant);
+}
+
+/* Enlaces: al pasar el mouse se subrayan, usando el acento. */
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- ÍCONOS (Material Symbols) ---------- */
+/* Ajuste fino para que los íconos se alineen con el texto.
+   La fuente Material Symbols se carga con <link> en el <head>. */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ---------- UTILIDAD: contenedor centrado ---------- */
+/* Limita el ancho del contenido y lo centra, con márgenes
+   laterales. Lo reutilizamos en todas las pantallas. */
+.contenedor {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--margin-desktop);
+}

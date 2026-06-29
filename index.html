@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLine Express — Buscar viajes al Norte</title>
+
+  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Íconos: Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Hojas de estilo (el orden importa por la cascada) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (compartido) ============ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="material-symbols-outlined">directions_bus</span>
+        <span class="logo__nombre">BlueLine Express</span>
+      </a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="#">Mis reservas</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="contenido">
+    <div class="contenedor">
+
+      <!-- Bienvenida -->
+      <section class="bienvenida">
+        <h1>¿A dónde viajás?</h1>
+        <p>Encontrá tu próximo viaje al Norte argentino.</p>
+      </section>
+
+      <!-- Formulario de búsqueda -->
+      <form class="tarjeta form-busqueda" id="form-busqueda">
+
+        <!-- Origen / Destino con botón de intercambio -->
+        <div class="form-busqueda__ruta">
+          <div class="campo">
+            <label class="campo__label" for="origen">Origen</label>
+            <div class="campo__control">
+              <span class="material-symbols-outlined">trip_origin</span>
+              <select id="origen" data-origen>
+                <option value="Buenos Aires" selected>Buenos Aires</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="San Salvador de Jujuy">San Salvador de Jujuy</option>
+                <option value="Salta">Salta</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Resistencia">Resistencia (Chaco)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Botón para intercambiar origen y destino -->
+          <button type="button" class="swap-btn" data-swap aria-label="Intercambiar origen y destino">
+            <span class="material-symbols-outlined">swap_vert</span>
+          </button>
+
+          <div class="campo">
+            <label class="campo__label" for="destino">Destino</label>
+            <div class="campo__control">
+              <span class="material-symbols-outlined">location_on</span>
+              <select id="destino" data-destino>
+                <option value="San Salvador de Jujuy" selected>San Salvador de Jujuy</option>
+                <option value="Salta">Salta</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Resistencia">Resistencia (Chaco)</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fechas -->
+        <div class="form-busqueda__fechas">
+          <div class="campo">
+            <label class="campo__label" for="salida">Salida</label>
+            <div class="campo__control">
+              <span class="material-symbols-outlined">calendar_month</span>
+              <input type="date" id="salida">
+            </div>
+          </div>
+          <div class="campo">
+            <label class="campo__label" for="regreso">Regreso (opcional)</label>
+            <div class="campo__control">
+              <span class="material-symbols-outlined">calendar_month</span>
+              <input type="date" id="regreso">
+            </div>
+          </div>
+        </div>
+
+        <!-- Pasajeros (contador con +/-) -->
+        <div class="campo form-busqueda__pasajeros">
+          <label class="campo__label">Pasajeros</label>
+          <div class="campo__control">
+            <span class="pasajeros-info">
+              <span class="material-symbols-outlined">person</span>
+              <span data-contador-valor>1 Pasajero</span>
+            </span>
+            <span class="contador">
+              <button type="button" class="contador__btn contador__btn--menos" data-contador-menos aria-label="Quitar pasajero">
+                <span class="material-symbols-outlined">remove</span>
+              </button>
+              <button type="button" class="contador__btn contador__btn--mas" data-contador-mas aria-label="Agregar pasajero">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <!-- Acción principal -->
+        <button type="submit" class="btn btn-primario btn-bloque">
+          <span class="material-symbols-outlined">search</span>
+          Buscar viajes
+        </button>
+      </form>
+
+      <!-- Destinos populares del Norte -->
+      <section class="destinos">
+        <h2>Destinos populares</h2>
+        <div class="destinos-grid">
+          <a href="seleccion-servicio.html" class="destino-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="destino-card__nombre">San Salvador de Jujuy</span>
+            <span class="destino-card__precio">Desde ARS 35.000</span>
+          </a>
+          <a href="seleccion-servicio.html" class="destino-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="destino-card__nombre">Salta</span>
+            <span class="destino-card__precio">Desde ARS 35.000</span>
+          </a>
+          <a href="seleccion-servicio.html" class="destino-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="destino-card__nombre">Santiago del Estero</span>
+            <span class="destino-card__precio">Desde ARS 30.000</span>
+          </a>
+          <a href="seleccion-servicio.html" class="destino-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="destino-card__nombre">Formosa</span>
+            <span class="destino-card__precio">Desde ARS 32.000</span>
+          </a>
+          <a href="seleccion-servicio.html" class="destino-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="destino-card__nombre">Resistencia</span>
+            <span class="destino-card__precio">Desde ARS 31.000</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="site-footer">
+    <div class="contenedor site-footer__inner">
+      <span class="site-footer__marca">BlueLine Express</span>
+      <nav class="site-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+        <a href="#">Centro de ayuda</a>
+      </nav>
+      <span class="site-footer__copy">© 2026 BlueLine Express — Transporte para todos</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript mínimo (contador, swap, navegación simulada) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* ============================================================
+   layout.css — Estructura / esqueleto del sitio
+   Header y footer compartidos por todas las pantallas, más
+   utilidades de estructura de página.
+   ============================================================ */
+
+/* ---------- HEADER (barra superior) ---------- */
+/* sticky: queda fija arriba al hacer scroll. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+/* Distribuye logo a la izquierda y navegación a la derecha. */
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo: ícono de colectivo + nombre de la marca. */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo .material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+}
+
+.logo__nombre {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+/* Navegación principal: lista horizontal de enlaces. */
+.nav-principal ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-principal a {
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-on-surface-variant);
+}
+
+.nav-principal a:hover {
+  color: var(--color-primary);
+}
+
+/* Enlace activo (la pantalla en la que estás). */
+.nav-principal a.activo {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- MAIN (contenido) ---------- */
+/* Separa el contenido del header y deja aire abajo. */
+.contenido {
+  padding-block: var(--space-xl);
+  min-height: 70vh;
+}
+
+/* ---------- FOOTER (pie de página) ---------- */
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-outline-variant);
+  margin-top: var(--space-xl);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+  padding-block: var(--space-xl);
+}
+
+.site-footer__marca {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.site-footer__links a {
+  font-size: var(--text-label);
+  color: var(--color-on-surface-variant);
+}
+
+.site-footer__links a:hover {
+  color: var(--color-primary);
+}
+
+.site-footer__copy {
+  font-size: var(--text-label);
+  color: var(--color-on-surface-variant);
+}

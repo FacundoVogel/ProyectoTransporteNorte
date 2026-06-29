@@ -1,0 +1,35 @@
+# ============================================================
+#  .gitignore — BlueLine Express (Ruta Norte)
+#  Solo se sube lo necesario para la web (HTML/CSS/JS/imágenes).
+#  Se dejan fuera documentos, archivos de Claude, configuración
+#  personal y archivos del sistema operativo.
+# ============================================================
+
+# ---------- Documentos (planificación, notas, diseño) ----------
+# Toda la documentación en Markdown y PDF queda fuera del repo.
+*.md
+*.pdf
+
+# ---------- Archivos relacionados a Claude ----------
+.claude/
+.claude*
+CLAUDE.md          # (ya cubierto por *.md, explícito por claridad)
+**/memory/
+
+# ---------- Configuración personal / privada ----------
+# Credenciales, claves y variables de entorno: NUNCA se suben.
+.env
+.env.*
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+*.local
+
+# ---------- Configuración del editor (VSCode) ----------
+.vscode/
+
+# ---------- Archivos del sistema operativo ----------
+Thumbs.db
+desktop.ini
+.DS_Store
