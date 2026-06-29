@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLine Express — Detalles del servicio</title>
+
+  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Íconos: Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Hojas de estilo (el orden importa por la cascada) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (compartido) ============ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="material-symbols-outlined">directions_bus</span>
+        <span class="logo__nombre">BlueLine Express</span>
+      </a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="detalles-servicio.html" class="activo">Rutas</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="contenido">
+    <div class="contenedor">
+
+      <!-- ----- Hero ----- -->
+      <section class="hero">
+        <div class="hero__bg">
+          <img src="img/interior-semicama.png" alt="Interior de un colectivo de larga distancia de BlueLine Express">
+        </div>
+        <div class="hero__overlay"></div>
+        <div class="hero__contenido">
+          <h1 class="hero__titulo">BlueLine Express: conectando el centro con el Norte</h1>
+          <p class="hero__texto">
+            Servicio premium de larga distancia que une Buenos Aires con el norte del país,
+            priorizando la accesibilidad y el confort de cada pasajero.
+          </p>
+          <div class="hero__chips">
+            <span class="chip">
+              <span class="material-symbols-outlined">location_on</span> Buenos Aires
+            </span>
+            <span class="chip">
+              <span class="material-symbols-outlined">north</span> Norte argentino
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ----- Terminales principales ----- -->
+      <section class="seccion">
+        <h2 class="titulo-seccion">Nuestras terminales principales</h2>
+        <div class="terminales-grid">
+          <article class="terminal-card">
+            <div class="icono-box"><span class="material-symbols-outlined">hub</span></div>
+            <h3>Terminal Central (Buenos Aires)</h3>
+            <p>Punto de partida con asistencia personalizada y salas de espera climatizadas.</p>
+          </article>
+          <article class="terminal-card">
+            <div class="icono-box"><span class="material-symbols-outlined">store</span></div>
+            <h3>Parada Santiago del Estero</h3>
+            <p>Ubicada en un punto medio estratégico, con conexión directa al transporte local.</p>
+          </article>
+          <article class="terminal-card">
+            <div class="icono-box"><span class="material-symbols-outlined">terrain</span></div>
+            <h3>Destino final seleccionable</h3>
+            <p>Destino final en cualquiera de las provincias seleccionables del norte del país, con instalaciones adaptadas para turistas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ----- Mapa de recorrido ----- -->
+      <section class="seccion">
+        <div class="mapa-recorrido">
+          <div class="mapa-recorrido__texto">
+            <h2 class="titulo-seccion">Mapa de recorrido: Norte</h2>
+            <p>
+              Nuestra red estratégica conecta los principales destinos del norte argentino.
+              Visualizá las rutas directas que facilitan tu viaje entre Buenos Aires y puntos
+              clave como Santiago del Estero y San Salvador de Jujuy.
+            </p>
+            <div class="mapa-recorrido__nota">
+              <span class="material-symbols-outlined">info</span>
+              <span>Frecuencia optimizada para minimizar esperas.</span>
+            </div>
+          </div>
+          <div class="mapa-recorrido__img">
+            <img src="img/mapa-ruta-norte.png" alt="Mapa de la red de transporte del norte argentino: Buenos Aires, Santiago del Estero y San Salvador de Jujuy">
+          </div>
+        </div>
+      </section>
+
+      <!-- ----- Horarios de salida ----- -->
+      <section class="seccion">
+        <div class="horarios-header">
+          <div>
+            <h2 class="titulo-seccion">Horarios de salida</h2>
+            <p>Frecuencia garantizada cada 120 minutos.</p>
+          </div>
+          <span class="chip-info">Salidas cada 120 minutos garantizadas</span>
+        </div>
+
+        <div class="tabla-wrap">
+          <div class="tabla-scroll">
+            <table class="tabla-horarios">
+              <thead>
+                <tr>
+                  <th>Salida</th>
+                  <th>Destino</th>
+                  <th>Estado</th>
+                  <th>Plataforma</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="hora">06:00</td>
+                  <td>San Salvador de Jujuy</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>04</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">08:00</td>
+                  <td>Santiago del Estero</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>02</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">10:30</td>
+                  <td>Salta</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>07</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">12:00</td>
+                  <td>Formosa</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>04</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">14:00</td>
+                  <td>Resistencia (Chaco)</td>
+                  <td><span class="estado estado--demora"><span class="material-symbols-outlined">warning</span> Demorado (10 m)</span></td>
+                  <td>01</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">16:30</td>
+                  <td>Salta</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>03</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+                <tr>
+                  <td class="hora">18:00</td>
+                  <td>San Salvador de Jujuy</td>
+                  <td><span class="estado estado--ok"><span class="material-symbols-outlined">check_circle</span> A tiempo</span></td>
+                  <td>04</td>
+                  <td><a href="seleccion-servicio.html" class="btn-reservar">Reservar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ----- Compromiso con la accesibilidad ----- -->
+      <section class="seccion accesibilidad">
+        <h2 class="titulo-seccion accesibilidad__titulo">Compromiso con la accesibilidad</h2>
+        <div class="accesibilidad-grid">
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">accessible_forward</span>
+            <p>Rampas automáticas en todas las unidades.</p>
+          </div>
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">airline_seat_recline_extra</span>
+            <p>Espacios reservados y anclajes para sillas de ruedas.</p>
+          </div>
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">visibility</span>
+            <p>Señalización en braille y alto relieve.</p>
+          </div>
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">volume_up</span>
+            <p>Avisos sonoros y visuales de próximas paradas.</p>
+          </div>
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">support_agent</span>
+            <p>Personal capacitado para asistencia en el embarque.</p>
+          </div>
+          <div class="accesibilidad-item">
+            <span class="material-symbols-outlined">accessibility</span>
+            <p>Protocolos de viaje inclusivo garantizados.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="site-footer">
+    <div class="contenedor site-footer__inner">
+      <span class="site-footer__marca">BlueLine Express</span>
+      <nav class="site-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+        <a href="#">Centro de ayuda</a>
+      </nav>
+      <span class="site-footer__copy">© 2026 BlueLine Express — Transporte para todos</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript compartido (esta pantalla no requiere JS propio) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

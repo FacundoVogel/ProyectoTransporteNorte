@@ -78,4 +78,45 @@
     position: sticky;
     top: 88px;
   }
+
+  /* ----- Detalles del servicio ----- */
+  /* Hero con más aire en desktop. */
+  .hero__contenido {
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) 48px;
+  }
+
+  .hero__titulo {
+    font-size: 3rem;
+  }
+
+  /* Terminales en 3 columnas. */
+  .terminales-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Mapa de recorrido: texto e imagen lado a lado. */
+  .mapa-recorrido {
+    flex-direction: row;
+    padding: var(--space-xl);
+  }
+
+  /* Encabezado de horarios: título a la izquierda, chip a la derecha. */
+  .horarios-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  /* Accesibilidad en 3 columnas. */
+  .accesibilidad-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- TABLET (entre 600px y 768px) ---------- */
+/* La sección de accesibilidad pasa a 2 columnas antes del salto a desktop. */
+@media (min-width: 600px) and (max-width: 768px) {
+  .accesibilidad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -546,3 +546,298 @@
   font-size: var(--text-headline-md);
   font-weight: var(--weight-semibold);
 }
+
+/* ============================================================
+   Utilidades de sección reutilizables
+   ============================================================ */
+/* Separación vertical entre secciones grandes de una página. */
+.seccion {
+  margin-bottom: var(--space-xl);
+}
+
+/* Título de sección grande (32px), más prominente que un h2 normal. */
+.titulo-seccion {
+  font-size: var(--text-headline-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================================
+   Bloques de la pantalla DETALLES DEL SERVICIO
+   (detalles-servicio.html)
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  margin-bottom: var(--space-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-primary-container);
+}
+
+/* Imagen de fondo del hero (atenuada). */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+/* Degradado slate de izquierda (opaco) a derecha (transparente)
+   para que el texto se lea sobre la imagen. */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-primary-container),
+    rgba(30, 41, 59, 0.6) 55%,
+    transparent
+  );
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  padding: var(--space-xl);
+  color: var(--color-on-primary);
+}
+
+.hero__titulo {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: var(--space-md);
+}
+
+.hero__texto {
+  font-size: var(--text-body);
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+}
+
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Pastilla naranja (Centro / Norte). */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+}
+
+/* ---------- Terminales principales ---------- */
+.terminales-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.terminal-card {
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  transition: box-shadow 0.2s;
+}
+
+.terminal-card:hover {
+  box-shadow: 0 10px 25px rgba(9, 20, 38, 0.08);
+}
+
+.terminal-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+/* Cuadradito con ícono (reutilizable). */
+.icono-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-container);
+}
+
+.icono-box .material-symbols-outlined {
+  color: var(--color-primary);
+}
+
+/* ---------- Mapa de recorrido ---------- */
+.mapa-recorrido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-lg);
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+}
+
+.mapa-recorrido__texto {
+  flex: 1;
+}
+
+.mapa-recorrido__texto p {
+  margin-block: var(--space-md);
+}
+
+.mapa-recorrido__nota {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-primary);
+  font-weight: var(--weight-medium);
+}
+
+.mapa-recorrido__img {
+  flex: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+}
+
+/* ---------- Horarios de salida (tabla) ---------- */
+.horarios-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.chip-info {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary-container);
+  color: var(--color-primary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+}
+
+/* Contenedor de la tabla (permite scroll horizontal en móvil). */
+.tabla-wrap {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.tabla-horarios {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tabla-horarios th {
+  padding: var(--space-md);
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+  font-weight: var(--weight-medium);
+  border-bottom: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+
+.tabla-horarios td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+
+/* Filas alternadas (efecto cebra) para leer mejor la tabla. */
+.tabla-horarios tbody tr:nth-child(even) {
+  background-color: var(--color-surface-container);
+}
+
+.tabla-horarios .hora {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+/* Estado del viaje (con ícono). */
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.estado--ok {
+  color: var(--color-secondary);
+}
+
+.estado--demora {
+  color: var(--color-error);
+}
+
+.btn-reservar {
+  color: var(--color-primary);
+  font-weight: var(--weight-medium);
+}
+
+.btn-reservar:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Compromiso con la accesibilidad (sección oscura) ---------- */
+.accesibilidad {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.accesibilidad__titulo {
+  color: #ffffff;
+  margin-bottom: var(--space-lg);
+}
+
+.accesibilidad-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.accesibilidad-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.accesibilidad-item .material-symbols-outlined {
+  flex-shrink: 0;
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+.accesibilidad-item p {
+  color: rgba(255, 255, 255, 0.9);
+}

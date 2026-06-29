@@ -124,11 +124,12 @@ if (
   }
 }
 
-/* Botón "Seleccionar" → siguiente paso del flujo de compra. */
+/* Botón "Seleccionar" → siguiente paso del flujo de compra
+   (selección de asientos). */
 const btnSeleccionar = document.querySelector('[data-seleccionar]');
 
 if (btnSeleccionar) {
   btnSeleccionar.addEventListener('click', function () {
-    window.location.href = 'detalles-servicio.html';
+    window.location.href = 'seleccion-asientos.html';
   });
 }
