@@ -48,4 +48,34 @@
     align-self: flex-end;
     margin-bottom: var(--space-xs);
   }
+
+  /* ----- Selección de servicio ----- */
+  /* Dos columnas: opciones (2 partes) + resumen (1 parte). */
+  .layout-seleccion {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* El resumen del viaje pasa a una fila horizontal
+     (salida | centro | llegada). */
+  .viaje-resumen {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .viaje-resumen__centro {
+    flex: 1;
+    padding-inline: var(--space-lg);
+  }
+
+  .viaje-resumen__col--llegada {
+    text-align: right;
+  }
+
+  /* El panel de resumen queda "pegado" al hacer scroll. */
+  .resumen-compra {
+    position: sticky;
+    top: 88px;
+  }
 }

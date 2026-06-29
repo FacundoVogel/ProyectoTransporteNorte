@@ -29,6 +29,8 @@
   --color-outline: #75777d;           /* bordes definidos */
   --color-outline-variant: #c5c6cd;   /* bordes suaves */
   --color-error: #ba1a1a;             /* errores */
+  --color-error-container: #ffdad6;   /* fondo suave de alerta (badges) */
+  --color-on-error-container: #93000a;/* texto sobre fondo de alerta */
 
   /* ---------- TIPOGRAFÍA ---------- */
   /* Inter para títulos; Roboto Mono para cuerpo, datos y labels.

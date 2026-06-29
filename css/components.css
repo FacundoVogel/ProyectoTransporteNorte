@@ -247,3 +247,302 @@
   gap: var(--space-md);
   margin-top: var(--space-md);
 }
+
+/* ============================================================
+   Encabezado de página reutilizable (título + subtítulo)
+   ============================================================ */
+.encabezado-pagina {
+  margin-bottom: var(--space-lg);
+}
+
+.encabezado-pagina p {
+  margin-top: var(--space-xs);
+}
+
+/* ============================================================
+   Bloques de la pantalla SELECCIÓN DE SERVICIO
+   (seleccion-servicio.html)
+   ============================================================ */
+
+/* Layout de dos columnas: opciones (izq) + resumen (der).
+   En móvil es una sola columna; en desktop pasa a 2:1
+   (ver responsive.css). */
+.layout-seleccion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* ---------- Resumen del viaje (cabecera de la tarjeta) ---------- */
+.viaje-resumen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.viaje-resumen__etiqueta {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-outline);
+}
+
+.viaje-resumen__hora {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+.viaje-resumen__lugar {
+  color: var(--color-on-surface-variant);
+}
+
+.viaje-resumen__centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.viaje-resumen__duracion {
+  font-size: var(--text-label);
+  color: var(--color-on-surface-variant);
+}
+
+.viaje-resumen__empresa {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.link-recorrido {
+  color: var(--color-secondary);
+  font-size: var(--text-label);
+}
+
+.link-recorrido:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Opciones de servicio (radios estilados) ---------- */
+.opciones-servicio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* El radio real se oculta visualmente pero sigue accesible
+   (lo controlamos clickeando su <label> asociado). */
+.opcion-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cada fila de opción. Usamos el combinador "+" (hermano
+   adyacente) entre el radio y su label para reflejar el estado
+   "seleccionado" sin JavaScript. */
+.opcion-servicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.opcion-servicio:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-container);
+}
+
+/* Estado seleccionado (cuando el radio previo está :checked). */
+.opcion-radio:checked + .opcion-servicio {
+  border-color: var(--color-primary);
+  background-color: rgba(249, 115, 22, 0.08); /* leve tinte naranja */
+}
+
+/* Accesibilidad: marco visible al navegar con teclado. */
+.opcion-radio:focus-visible + .opcion-servicio {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.opcion-servicio__info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Círculo del radio dibujado por nosotros. */
+.radio-visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-outline-variant);
+  border-radius: var(--radius-full);
+}
+
+/* Punto interno: aparece (scale 0 → 1) al seleccionar. */
+.radio-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  transform: scale(0);
+  transition: transform 0.15s;
+}
+
+.opcion-radio:checked + .opcion-servicio .radio-visual {
+  border-color: var(--color-primary);
+}
+
+.opcion-radio:checked + .opcion-servicio .radio-visual::after {
+  transform: scale(1);
+}
+
+.opcion-servicio__nombre {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+.opcion-servicio__disp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-on-surface-variant);
+  font-size: var(--text-label);
+}
+
+.opcion-servicio__disp .material-symbols-outlined {
+  font-size: 1.125rem;
+}
+
+.opcion-servicio__precio {
+  text-align: right;
+}
+
+.opcion-servicio__precio .moneda,
+.opcion-servicio__precio .por {
+  display: block;
+  font-size: var(--text-label);
+  color: var(--color-outline);
+}
+
+.opcion-servicio__precio .precio {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+/* Badge de alerta "¡Últimos asientos!" */
+.badge-alerta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-full);
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+  font-size: var(--text-label);
+}
+
+.badge-alerta .material-symbols-outlined {
+  font-size: 0.875rem;
+}
+
+/* ---------- Panel de resumen de compra (columna derecha) ---------- */
+.resumen-compra h2 {
+  margin-bottom: var(--space-md);
+}
+
+.resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.resumen-fila__label {
+  color: var(--color-on-surface-variant);
+  font-size: var(--text-label);
+}
+
+.resumen-fila__valor {
+  font-weight: var(--weight-medium);
+}
+
+.resumen-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--space-md);
+}
+
+.resumen-total__label,
+.resumen-total__valor {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
+
+.resumen-total__valor {
+  color: var(--color-primary);
+}
+
+.resumen-nota {
+  margin-top: var(--space-md);
+  text-align: center;
+  font-size: var(--text-label);
+  color: var(--color-outline);
+}
+
+/* ---------- Tarjeta con imagen y texto superpuesto ---------- */
+.tarjeta-imagen {
+  position: relative;
+  height: 192px;
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tarjeta-imagen__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+  /* Degradado oscuro abajo para que el texto se lea. */
+  background: linear-gradient(to top, rgba(9, 20, 38, 0.85), transparent);
+}
+
+.tarjeta-imagen__texto {
+  color: #ffffff;
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  font-weight: var(--weight-semibold);
+}
