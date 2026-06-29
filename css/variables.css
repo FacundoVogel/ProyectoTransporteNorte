@@ -32,6 +32,10 @@
   --color-error-container: #ffdad6;   /* fondo suave de alerta (badges) */
   --color-on-error-container: #93000a;/* texto sobre fondo de alerta */
 
+  /* Estados de asientos (mapa de selección) */
+  --color-seat-available: #d5e3fd;    /* asiento disponible */
+  --color-seat-occupied: #434656;     /* asiento ocupado (no clickeable) */
+
   /* ---------- TIPOGRAFÍA ---------- */
   /* Inter para títulos; Roboto Mono para cuerpo, datos y labels.
      Las fuentes se cargan con <link> en el <head> de cada HTML. */

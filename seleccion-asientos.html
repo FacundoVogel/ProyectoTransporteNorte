@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLine Express — Seleccioná tus asientos</title>
+
+  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Íconos: Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Hojas de estilo (el orden importa por la cascada) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (compartido) ============ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="material-symbols-outlined">directions_bus</span>
+        <span class="logo__nombre">BlueLine Express</span>
+      </a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="detalles-servicio.html">Rutas</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="contenido">
+    <div class="contenedor">
+
+      <!-- Stepper del checkout -->
+      <ol class="stepper">
+        <li class="stepper__paso stepper__paso--hecho">
+          <span class="stepper__num">1</span>
+          <span class="stepper__label">Detalles del viaje</span>
+        </li>
+        <li class="stepper__linea"></li>
+        <li class="stepper__paso stepper__paso--activo">
+          <span class="stepper__num">2</span>
+          <span class="stepper__label">Selección de asientos</span>
+        </li>
+        <li class="stepper__linea"></li>
+        <li class="stepper__paso">
+          <span class="stepper__num">3</span>
+          <span class="stepper__label">Pago</span>
+        </li>
+      </ol>
+
+      <!-- Layout: mapa (izquierda) + resumen (derecha) -->
+      <div class="layout-seleccion">
+
+        <!-- ----- Columna izquierda: mapa de asientos ----- -->
+        <section class="asientos-seccion" data-mapa-asientos>
+          <div class="asientos-header">
+            <h2>Seleccioná tus asientos</h2>
+            <div class="asientos-leyenda">
+              <span class="leyenda-item"><span class="leyenda-muestra leyenda-muestra--disp"></span> Disponible</span>
+              <span class="leyenda-item"><span class="leyenda-muestra leyenda-muestra--sel"></span> Seleccionado</span>
+              <span class="leyenda-item"><span class="leyenda-muestra leyenda-muestra--ocup"></span> Ocupado</span>
+            </div>
+          </div>
+
+          <div class="bus-panel">
+            <div class="bus">
+
+              <!-- Frente: conductor + espacio accesible -->
+              <div class="bus-frente">
+                <div class="bus-conductor">
+                  <span class="bus-mini-label">Frente</span>
+                  <div class="bus-volante"><span class="material-symbols-outlined">steering_wheel_heat</span></div>
+                  <span class="bus-mini-label">Conductor</span>
+                </div>
+                <div class="bus-accesible">
+                  <span class="material-symbols-outlined">accessible</span>
+                  <span>Espacio<br>accesible</span>
+                </div>
+              </div>
+
+              <!-- Filas de asientos -->
+              <div class="bus-filas">
+
+                <!-- Fila 1 -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a1A" value="1A"><label class="asiento__btn" for="a1A">1A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a1B" value="1B"><label class="asiento__btn" for="a1B">1B</label></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a2A" value="2A" checked><label class="asiento__btn" for="a2A">2A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a2B" value="2B" checked><label class="asiento__btn" for="a2B">2B</label></span>
+                  </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a3A" value="3A"><label class="asiento__btn" for="a3A">3A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a3B" value="3B"><label class="asiento__btn" for="a3B">3B</label></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a4A" value="4A"><label class="asiento__btn" for="a4A">4A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a4B" value="4B"><label class="asiento__btn" for="a4B">4B</label></span>
+                  </div>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a5A" value="5A"><label class="asiento__btn" for="a5A">5A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a5B" value="5B"><label class="asiento__btn" for="a5B">5B</label></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a6A" value="6A"><label class="asiento__btn" for="a6A">6A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a6B" value="6B"><label class="asiento__btn" for="a6B">6B</label></span>
+                  </div>
+                </div>
+
+                <!-- Fila 4 (ocupada) -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                  </div>
+                </div>
+
+                <!-- Fila 5 -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a7A" value="7A"><label class="asiento__btn" for="a7A">7A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a7B" value="7B"><label class="asiento__btn" for="a7B">7B</label></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a8A" value="8A"><label class="asiento__btn" for="a8A">8A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a8B" value="8B"><label class="asiento__btn" for="a8B">8B</label></span>
+                  </div>
+                </div>
+
+                <!-- Fila 6 -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento"><input type="checkbox" id="a9A" value="9A"><label class="asiento__btn" for="a9A">9A</label></span>
+                    <span class="asiento"><input type="checkbox" id="a9B" value="9B"><label class="asiento__btn" for="a9B">9B</label></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                  </div>
+                </div>
+
+                <!-- Fila 7 (ocupada) -->
+                <div class="bus-fila">
+                  <div class="par-asientos">
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                  </div>
+                  <div class="pasillo"></div>
+                  <div class="par-asientos">
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                    <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="bus-atras">Fondo</div>
+            </div>
+
+            <!-- Imagen del interior -->
+            <div class="bus-imagen">
+              <img src="img/interior-semicama.png" alt="Vista del interior del colectivo BlueLine Express">
+            </div>
+          </div>
+        </section>
+
+        <!-- ----- Columna derecha: resumen del viaje ----- -->
+        <aside>
+          <div class="tarjeta resumen-compra">
+            <h2>Resumen del viaje</h2>
+
+            <div class="resumen-viaje__ruta">
+              <div class="resumen-viaje__dato">
+                <span class="material-symbols-outlined">location_on</span>
+                <strong>Buenos Aires → San Salvador de Jujuy</strong>
+              </div>
+              <div class="resumen-viaje__dato">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span>24 de octubre, 2026 · 09:30 hs</span>
+              </div>
+            </div>
+
+            <span class="resumen-viaje__subtitulo">Asientos seleccionados</span>
+            <div class="asientos-chips" data-asientos-chips>
+              <!-- Los chips se generan con JavaScript -->
+            </div>
+
+            <div class="resumen-fila">
+              <span class="resumen-fila__label" data-base-label>Tarifa base (2x)</span>
+              <span class="resumen-fila__valor" data-base-fare>ARS 70.000</span>
+            </div>
+            <div class="resumen-fila">
+              <span class="resumen-fila__label">Cargo de servicio</span>
+              <span class="resumen-fila__valor">ARS 1.500</span>
+            </div>
+            <div class="resumen-total">
+              <span class="resumen-total__label">Total</span>
+              <span class="resumen-total__valor" data-total>ARS 71.500</span>
+            </div>
+
+            <button type="button" class="btn btn-primario btn-bloque" data-continuar>
+              Continuar
+            </button>
+          </div>
+
+          <!-- Nota sobre asientos preferenciales -->
+          <div class="nota-accesibilidad">
+            <span class="material-symbols-outlined">info</span>
+            <div>
+              <strong>Asientos de la primera fila</strong>
+              <p>Los asientos delanteros tienen prioridad para personas mayores y pasajeros con discapacidad. Te pedimos tenerlo en cuenta.</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="site-footer">
+    <div class="contenedor site-footer__inner">
+      <span class="site-footer__marca">BlueLine Express</span>
+      <nav class="site-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+        <a href="#">Centro de ayuda</a>
+      </nav>
+      <span class="site-footer__copy">© 2026 BlueLine Express — Transporte para todos</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript mínimo (mapa de asientos + resumen dinámico) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

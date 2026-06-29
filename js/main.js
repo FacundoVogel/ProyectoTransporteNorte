@@ -133,3 +133,101 @@ if (btnSeleccionar) {
     window.location.href = 'seleccion-asientos.html';
   });
 }
+
+/* ------------------------------------------------------------
+   5) SELECCIÓN DE ASIENTOS — mapa interactivo + resumen
+   El estado visual de cada asiento (disponible/seleccionado) lo
+   hace SOLO el CSS (checkbox :checked). Acá usamos JS para lo
+   que CSS no puede: armar la lista de asientos elegidos, contar
+   y calcular el total.
+   ------------------------------------------------------------ */
+const mapaAsientos = document.querySelector('[data-mapa-asientos]');
+
+if (mapaAsientos) {
+  const PRECIO_ASIENTO = 35000;   // ARS por asiento
+  const CARGO_SERVICIO = 1500;    // cargo fijo de servicio
+
+  // Solo los asientos disponibles son checkboxes (los ocupados no).
+  const asientos = mapaAsientos.querySelectorAll('input[type="checkbox"]');
+
+  const contenedorChips = document.querySelector('[data-asientos-chips]');
+  const baseLabel = document.querySelector('[data-base-label]');
+  const baseFare = document.querySelector('[data-base-fare]');
+  const totalEl = document.querySelector('[data-total]');
+  const btnContinuar = document.querySelector('[data-continuar]');
+
+  function formatearPesos(numero) {
+    return numero.toLocaleString('es-AR');
+  }
+
+  // Crea un chip para un asiento, con botón "x" para quitarlo.
+  function crearChip(asientoInput) {
+    const chip = document.createElement('span');
+    chip.className = 'asiento-chip';
+    chip.textContent = asientoInput.value + ' ';
+
+    const quitar = document.createElement('button');
+    quitar.type = 'button';
+    quitar.className = 'asiento-chip__quitar';
+    quitar.setAttribute('aria-label', 'Quitar asiento ' + asientoInput.value);
+    quitar.innerHTML = '<span class="material-symbols-outlined">close</span>';
+
+    // Al hacer click en la "x", desmarca el asiento y recalcula.
+    quitar.addEventListener('click', function () {
+      asientoInput.checked = false;
+      actualizar();
+    });
+
+    chip.appendChild(quitar);
+    return chip;
+  }
+
+  // Recalcula chips, contador y precios según lo seleccionado.
+  function actualizar() {
+    const elegidos = [];
+    asientos.forEach(function (asiento) {
+      if (asiento.checked) {
+        elegidos.push(asiento);
+      }
+    });
+
+    // Reconstruye la lista de chips.
+    contenedorChips.innerHTML = '';
+    if (elegidos.length === 0) {
+      const vacio = document.createElement('span');
+      vacio.className = 'asientos-chips__vacio';
+      vacio.textContent = 'Todavía no elegiste asientos.';
+      contenedorChips.appendChild(vacio);
+    } else {
+      elegidos.forEach(function (asiento) {
+        contenedorChips.appendChild(crearChip(asiento));
+      });
+    }
+
+    // Precios.
+    const cantidad = elegidos.length;
+    const base = cantidad * PRECIO_ASIENTO;
+    const total = cantidad > 0 ? base + CARGO_SERVICIO : 0;
+
+    baseLabel.textContent = 'Tarifa base (' + cantidad + 'x)';
+    baseFare.textContent = 'ARS ' + formatearPesos(base);
+    totalEl.textContent = 'ARS ' + formatearPesos(total);
+
+    // No se puede continuar sin asientos.
+    btnContinuar.disabled = cantidad === 0;
+  }
+
+  asientos.forEach(function (asiento) {
+    asiento.addEventListener('change', actualizar);
+  });
+
+  // Botón Continuar → siguiente paso (datos del pasajero).
+  btnContinuar.addEventListener('click', function () {
+    if (!btnContinuar.disabled) {
+      window.location.href = 'datos-pasajero.html';
+    }
+  });
+
+  // Estado inicial (toma los asientos que vienen marcados).
+  actualizar();
+}

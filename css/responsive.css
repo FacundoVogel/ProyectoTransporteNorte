@@ -24,6 +24,19 @@
   }
 }
 
+/* ---------- MÓVIL CHICO (hasta 600px) ---------- */
+@media (max-width: 600px) {
+  /* En el stepper, mostramos el texto solo del paso actual para
+     que no se amontone; los demás quedan como números. */
+  .stepper__paso:not(.stepper__paso--activo) .stepper__label {
+    display: none;
+  }
+
+  .stepper__linea {
+    width: 20px;
+  }
+}
+
 /* ---------- DESKTOP (desde 769px) ---------- */
 @media (min-width: 769px) {
   /* El formulario de búsqueda no se estira a todo el ancho:
