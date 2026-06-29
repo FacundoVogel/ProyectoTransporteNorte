@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLine Express — Datos del pasajero</title>
+
+  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Íconos: Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Hojas de estilo (el orden importa por la cascada) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (compartido) ============ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="material-symbols-outlined">directions_bus</span>
+        <span class="logo__nombre">BlueLine Express</span>
+      </a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="detalles-servicio.html">Rutas</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO ============ -->
+  <main class="contenido">
+    <div class="contenedor">
+
+      <!-- Stepper del checkout -->
+      <ol class="stepper">
+        <li class="stepper__paso stepper__paso--hecho">
+          <span class="stepper__num">1</span>
+          <span class="stepper__label">Detalles del viaje</span>
+        </li>
+        <li class="stepper__linea"></li>
+        <li class="stepper__paso stepper__paso--hecho">
+          <span class="stepper__num">2</span>
+          <span class="stepper__label">Selección de asientos</span>
+        </li>
+        <li class="stepper__linea"></li>
+        <li class="stepper__paso stepper__paso--activo">
+          <span class="stepper__num">3</span>
+          <span class="stepper__label">Pago</span>
+        </li>
+      </ol>
+
+      <section class="encabezado-pagina">
+        <h1>Cargá los datos del pasajero</h1>
+      </section>
+
+      <!-- Todo el layout va dentro de un form: el botón "Continuar
+           al Pago" (panel derecho) valida y envía los campos. -->
+      <form id="form-datos" class="layout-seleccion">
+
+        <!-- ----- Columna izquierda: formulario ----- -->
+        <div class="datos-card">
+          <div class="datos-card__header">
+            <span class="datos-card__pasajero">
+              <span class="material-symbols-outlined">person</span> Pasajero 1
+            </span>
+            <span class="datos-card__asiento">
+              Asiento ida
+              <strong>2A</strong>
+            </span>
+          </div>
+
+          <div class="datos-card__body">
+            <h3>Datos personales</h3>
+            <div class="campos-grid">
+
+              <div class="campo">
+                <label class="campo__label" for="nombre">Nombre <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <input type="text" id="nombre" name="nombre" placeholder="Escribí el nombre" required>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="apellido">Apellido <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <input type="text" id="apellido" name="apellido" placeholder="Escribí el apellido" required>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="nacionalidad">Nacionalidad <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <select id="nacionalidad" name="nacionalidad" required>
+                    <option value="Argentina" selected>Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Otra">Otra</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="tipo-doc">Tipo de documento <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <select id="tipo-doc" name="tipo-doc" required>
+                    <option value="DNI" selected>DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="LC">Libreta cívica</option>
+                    <option value="LE">Libreta de enrolamiento</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="documento">Número de documento <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <input type="text" id="documento" name="documento" placeholder="Escribí el número" inputmode="numeric" required>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="sexo">Sexo <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <select id="sexo" name="sexo" required>
+                    <option value="" selected disabled>Seleccioná una opción</option>
+                    <option value="F">Femenino</option>
+                    <option value="M">Masculino</option>
+                    <option value="X">X</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__label" for="nacimiento">Fecha de nacimiento <span class="requerido">*</span></label>
+                <div class="campo__control">
+                  <span class="material-symbols-outlined">calendar_month</span>
+                  <input type="date" id="nacimiento" name="nacimiento" required>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ----- Columna derecha: datos del viaje + acciones ----- -->
+        <aside>
+          <div class="tarjeta resumen-compra">
+            <div class="datos-viaje__titulo">
+              <span class="material-symbols-outlined">confirmation_number</span>
+              <h2>Datos del viaje</h2>
+            </div>
+
+            <span class="badge-ida">
+              <span class="material-symbols-outlined">arrow_forward</span> Ida
+            </span>
+
+            <div class="viaje-od">
+              <div>
+                <p class="dato-label">Origen</p>
+                <p class="dato-valor">Buenos Aires</p>
+                <p class="dato-label">Salida</p>
+                <p class="dato-valor">Jue 28 · 00:15 hs</p>
+              </div>
+              <div>
+                <p class="dato-label">Destino</p>
+                <p class="dato-valor">San Salvador de Jujuy</p>
+                <p class="dato-label">Llegada</p>
+                <p class="dato-valor">Jue 28 · 14:45 hs</p>
+              </div>
+            </div>
+
+            <div class="viaje-extra">
+              <div class="viaje-extra__fila">
+                <span class="dato-label">Vía</span>
+                <span class="dato-valor">Santiago del Estero</span>
+              </div>
+              <div class="viaje-extra__fila">
+                <span class="dato-label">Servicio</span>
+                <span class="dato-valor">Semi Cama</span>
+              </div>
+              <div class="viaje-extra__fila">
+                <span class="dato-label">Duración</span>
+                <span class="dato-valor">14 h 30 m</span>
+              </div>
+            </div>
+
+            <a href="detalles-servicio.html" class="link-recorrido">Ver recorrido</a>
+
+            <!-- Aviso sobre menores -->
+            <div class="nota-aviso">
+              <span class="material-symbols-outlined">info</span>
+              <p>¿Viajás con menores? <a href="#">Consultá la normativa vigente</a> y llevá impreso el formulario correspondiente.</p>
+            </div>
+
+            <div class="acciones-apiladas">
+              <button type="submit" class="btn btn-primario btn-bloque">Continuar al pago</button>
+              <a href="seleccion-asientos.html" class="btn btn-outline btn-bloque">Volver</a>
+            </div>
+          </div>
+        </aside>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer class="site-footer">
+    <div class="contenedor site-footer__inner">
+      <span class="site-footer__marca">BlueLine Express</span>
+      <nav class="site-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos del servicio</a>
+        <a href="#">Centro de ayuda</a>
+      </nav>
+      <span class="site-footer__copy">© 2026 BlueLine Express — Transporte para todos</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript mínimo (envío simulado del formulario) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1207,3 +1207,161 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ============================================================
+   Bloques de la pantalla DATOS DEL PASAJERO
+   (datos-pasajero.html)
+   ============================================================ */
+
+/* Tarjeta del pasajero: cabecera coloreada + cuerpo con el form. */
+.datos-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.datos-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface-container);
+}
+
+.datos-card__pasajero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.datos-card__asiento {
+  text-align: right;
+  font-size: var(--text-label);
+  color: var(--color-on-surface-variant);
+}
+
+.datos-card__asiento strong {
+  display: block;
+  color: var(--color-primary);
+}
+
+.datos-card__body {
+  padding: var(--space-lg);
+}
+
+.datos-card__body h3 {
+  margin-bottom: var(--space-md);
+}
+
+/* Grilla de campos del formulario (1 columna en móvil, 2 en desktop). */
+.campos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* Marca de campo obligatorio (asterisco). */
+.requerido {
+  color: var(--color-error);
+}
+
+/* ---------- Tarjeta "Datos del viaje" (panel derecho) ---------- */
+.datos-viaje__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.badge-ida {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+}
+
+/* Origen / destino en dos columnas. */
+.viaje-od {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.dato-label {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-outline);
+}
+
+.dato-valor {
+  font-weight: var(--weight-medium);
+}
+
+.viaje-extra {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.viaje-extra__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Caja de aviso naranja (¿viajás con menores?). */
+.nota-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-secondary-container);
+  color: var(--color-primary);
+}
+
+.nota-aviso .material-symbols-outlined {
+  flex-shrink: 0;
+}
+
+.nota-aviso a {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+}
+
+/* Botón secundario "outline" (Volver). */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-outline);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-surface-container);
+  text-decoration: none;
+}
+
+/* Grupo de botones apilados (Continuar / Volver). */
+.acciones-apiladas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}

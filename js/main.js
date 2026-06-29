@@ -231,3 +231,20 @@ if (mapaAsientos) {
   // Estado inicial (toma los asientos que vienen marcados).
   actualizar();
 }
+
+/* ------------------------------------------------------------
+   6) DATOS DEL PASAJERO — envío simulado
+   La validación de los campos obligatorios la hace el navegador
+   con el atributo "required" (HTML5), sin JavaScript. El evento
+   "submit" solo se dispara si todos los campos son válidos; ahí
+   evitamos el envío real (es un mockup) y avanzamos al siguiente
+   paso (confirmación de reserva).
+   ------------------------------------------------------------ */
+const formDatos = document.getElementById('form-datos');
+
+if (formDatos) {
+  formDatos.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    window.location.href = 'confirmacion-reserva.html';
+  });
+}

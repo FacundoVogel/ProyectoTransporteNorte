@@ -124,6 +124,12 @@
   .accesibilidad-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* ----- Datos del pasajero ----- */
+  /* Campos del formulario en dos columnas. */
+  .campos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* ---------- TABLET (entre 600px y 768px) ---------- */
