@@ -13,8 +13,6 @@ body {
   line-height: 1.5;
   color: var(--color-on-surface);
   background-color: var(--color-background);
-  /* Suaviza el renderizado de la fuente. */
-  -webkit-font-smoothing: antialiased;
 }
 
 /* ---------- TÍTULOS (Inter) ---------- */
