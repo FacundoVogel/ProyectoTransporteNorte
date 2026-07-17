@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal de Ómnibus BA — Datos del pasajero</title>
 
-  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Íconos: Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-  <!-- Hojas de estilo (el orden importa por la cascada) -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -22,7 +19,7 @@
 </head>
 <body>
 
-  <!-- ============ HEADER (compartido) ============ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="contenedor site-header__inner">
       <a href="index.html" class="logo">
@@ -39,11 +36,10 @@
     </div>
   </header>
 
-  <!-- ============ CONTENIDO ============ -->
+  <!-- CONTENIDO -->
   <main class="contenido">
     <div class="contenedor">
 
-      <!-- Stepper del checkout -->
       <ol class="stepper">
         <li class="stepper__paso stepper__paso--hecho">
           <span class="stepper__num">1</span>
@@ -65,11 +61,8 @@
         <h1>Cargá los datos del pasajero</h1>
       </section>
 
-      <!-- Todo el layout va dentro de un form: el botón "Continuar
-           al Pago" (panel derecho) valida y envía los campos. -->
       <form id="form-datos" class="layout-seleccion">
 
-        <!-- ----- Columna izquierda: formulario ----- -->
         <div class="datos-card">
           <div class="datos-card__header">
             <span class="datos-card__pasajero">
@@ -156,7 +149,6 @@
           </div>
         </div>
 
-        <!-- ----- Columna derecha: datos del viaje + acciones ----- -->
         <aside>
           <div class="tarjeta resumen-compra">
             <div class="datos-viaje__titulo">
@@ -200,7 +192,6 @@
 
             <a href="detalles-servicio.html" class="link-recorrido">Ver recorrido</a>
 
-            <!-- Aviso sobre menores -->
             <div class="nota-aviso">
               <span class="material-symbols-outlined">info</span>
               <p>¿Viajás con menores? <a href="#">Consultá la normativa vigente</a> y llevá impreso el formulario correspondiente.</p>
@@ -217,7 +208,7 @@
     </div>
   </main>
 
-  <!-- ============ FOOTER (compartido) ============ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="contenedor site-footer__inner">
       <span class="site-footer__marca">Terminal de Ómnibus BA</span>
@@ -230,7 +221,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript mínimo (envío simulado del formulario) -->
   <script src="js/main.js"></script>
 </body>
 </html>

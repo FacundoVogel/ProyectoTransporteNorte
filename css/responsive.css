@@ -1,24 +1,15 @@
-/* ============================================================
-   responsive.css — Media queries (adaptación a cada pantalla)
-   Todas las reglas responsive juntas en un solo lugar.
-   Estrategia mobile-first: el CSS base sirve para móvil y acá
-   agregamos los ajustes para pantallas más grandes.
-   Breakpoint principal: 768px.
-   ============================================================ */
+/* responsive.css — Media queries (mobile-first, breakpoint principal: 768px) */
 
 /* ---------- MÓVIL (hasta 768px) ---------- */
 @media (max-width: 768px) {
-  /* Márgenes laterales más chicos en celular. */
   .contenedor {
     padding-inline: var(--margin-mobile);
   }
 
-  /* El nombre de la marca se achica para no tapar la navegación. */
   .logo__nombre {
     font-size: var(--text-body);
   }
 
-  /* La navegación deja un poco menos de aire entre links. */
   .nav-principal ul {
     gap: var(--space-md);
   }
@@ -26,8 +17,6 @@
 
 /* ---------- MÓVIL CHICO (hasta 600px) ---------- */
 @media (max-width: 600px) {
-  /* En el stepper, mostramos el texto solo del paso actual para
-     que no se amontone; los demás quedan como números. */
   .stepper__paso:not(.stepper__paso--activo) .stepper__label {
     display: none;
   }
@@ -39,13 +28,10 @@
 
 /* ---------- DESKTOP (desde 769px) ---------- */
 @media (min-width: 769px) {
-  /* El formulario de búsqueda no se estira a todo el ancho:
-     queda centrado y legible. */
   .form-busqueda {
     max-width: 720px;
   }
 
-  /* Origen y destino en fila, con el botón de swap en el medio. */
   .form-busqueda__ruta {
     flex-direction: row;
     align-items: flex-end;
@@ -55,21 +41,15 @@
     flex: 1;
   }
 
-  /* El botón de swap deja de centrarse vertical y se alinea
-     con la base de los campos. */
   .swap-btn {
     align-self: flex-end;
     margin-bottom: var(--space-xs);
   }
 
-  /* ----- Selección de servicio ----- */
-  /* Dos columnas: opciones (2 partes) + resumen (1 parte). */
   .layout-seleccion {
     grid-template-columns: 2fr 1fr;
   }
 
-  /* El resumen del viaje pasa a una fila horizontal
-     (salida | centro | llegada). */
   .viaje-resumen {
     flex-direction: row;
     justify-content: space-between;
@@ -86,14 +66,11 @@
     text-align: right;
   }
 
-  /* El panel de resumen queda "pegado" al hacer scroll. */
   .resumen-compra {
     position: sticky;
     top: 88px;
   }
 
-  /* ----- Detalles del servicio ----- */
-  /* Hero con más aire en desktop. */
   .hero__contenido {
     padding: var(--space-xl) var(--space-xl) var(--space-xl) 48px;
   }
@@ -102,42 +79,33 @@
     font-size: 3rem;
   }
 
-  /* Terminales en 3 columnas. */
   .terminales-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Mapa de recorrido: texto e imagen lado a lado. */
   .mapa-recorrido {
     flex-direction: row;
     padding: var(--space-xl);
   }
 
-  /* Encabezado de horarios: título a la izquierda, chip a la derecha. */
   .horarios-header {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
   }
 
-  /* Accesibilidad en 3 columnas. */
   .accesibilidad-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* ----- Datos del pasajero ----- */
-  /* Campos del formulario en dos columnas. */
   .campos-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* ----- Confirmación de reserva ----- */
-  /* Datos del pasajero en tres columnas. */
   .ticket-pasajero {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* QR e info en fila. */
   .ticket-qr {
     flex-direction: row;
     text-align: left;
@@ -147,14 +115,12 @@
     justify-content: flex-start;
   }
 
-  /* Botones finales en fila. */
   .confirmacion-acciones {
     flex-direction: row;
   }
 }
 
-/* ---------- TABLET (entre 600px y 768px) ---------- */
-/* La sección de accesibilidad pasa a 2 columnas antes del salto a desktop. */
+/* ---------- TABLET (600px–768px) ---------- */
 @media (min-width: 600px) and (max-width: 768px) {
   .accesibilidad-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -1,44 +1,31 @@
-/* ============================================================
-   reset.css — Normalización mínima entre navegadores
-   Pone los estilos por defecto "en cero" para partir desde
-   una base predecible en todos los navegadores.
-   ============================================================ */
+/* reset.css — Normalización mínima entre navegadores */
 
-/* box-sizing: border-box hace que padding y border NO sumen
-   ancho extra al elemento. Es más intuitivo para maquetar. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Saca los márgenes y paddings por defecto del navegador. */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Las listas que usemos para menús no llevan viñetas. */
 ul,
 ol {
   list-style: none;
 }
 
-/* Los enlaces heredan el color del texto y sin subrayado por
-   defecto (lo agregamos puntualmente donde haga falta). */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Las imágenes nunca se desbordan de su contenedor. */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Botones e inputs heredan la tipografía del sitio (por defecto
-   los navegadores les ponen una fuente distinta). */
 button,
 input,
 textarea,
@@ -47,7 +34,6 @@ select {
   font-size: inherit;
 }
 
-/* El botón se ve como botón clickeable. */
 button {
   cursor: pointer;
   border: none;

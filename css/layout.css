@@ -1,11 +1,6 @@
-/* ============================================================
-   layout.css — Estructura / esqueleto del sitio
-   Header y footer compartidos por todas las pantallas, más
-   utilidades de estructura de página.
-   ============================================================ */
+/* layout.css — Header, footer y estructura de página */
 
-/* ---------- HEADER (barra superior) ---------- */
-/* sticky: queda fija arriba al hacer scroll. */
+/* ---------- HEADER ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -14,7 +9,6 @@
   border-bottom: 1px solid var(--color-outline-variant);
 }
 
-/* Distribuye logo a la izquierda y navegación a la derecha. */
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -22,7 +16,6 @@
   height: 64px;
 }
 
-/* Logo: ícono de colectivo + nombre de la marca. */
 .logo {
   display: flex;
   align-items: center;
@@ -41,7 +34,6 @@
   color: var(--color-primary);
 }
 
-/* Navegación principal: lista horizontal de enlaces. */
 .nav-principal ul {
   display: flex;
   align-items: center;
@@ -58,20 +50,18 @@
   color: var(--color-primary);
 }
 
-/* Enlace activo (la pantalla en la que estás). */
 .nav-principal a.activo {
   color: var(--color-primary);
   font-weight: var(--weight-semibold);
 }
 
-/* ---------- MAIN (contenido) ---------- */
-/* Separa el contenido del header y deja aire abajo. */
+/* ---------- MAIN ---------- */
 .contenido {
   padding-block: var(--space-xl);
   min-height: 70vh;
 }
 
-/* ---------- FOOTER (pie de página) ---------- */
+/* ---------- FOOTER ---------- */
 .site-footer {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-outline-variant);

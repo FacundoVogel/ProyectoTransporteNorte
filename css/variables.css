@@ -1,77 +1,61 @@
-/* ============================================================
-   variables.css — Sistema de diseño "Slate & Mono"
-   Todas las decisiones visuales (colores, fuentes, espaciados,
-   radios) viven acá como variables CSS (custom properties).
-   Para cambiar algo en todo el sitio, se cambia UNA sola vez acá.
-   ============================================================ */
+/* variables.css — Sistema de diseño "Slate & Mono" */
 
 :root {
   /* ---------- COLORES ---------- */
-
-  /* Primary — slate oscuro: navbar, títulos, acciones principales */
   --color-primary: #091426;
   --color-primary-container: #1e293b;
   --color-on-primary: #ffffff;
 
-  /* Secondary — naranja: CTAs, foco, elementos destacados */
   --color-secondary: #f97316;
   --color-secondary-container: #fd761a;
   --color-on-secondary: #ffffff;
 
-  /* Superficies (fondos y tarjetas) */
-  --color-background: #f8f9ff;        /* fondo general de página */
-  --color-surface: #ffffff;           /* tarjetas y contenedores */
-  --color-surface-container: #e6eeff; /* superficies tonalmente separadas */
-  --color-on-surface: #0d1c2f;        /* texto principal */
-  --color-on-surface-variant: #45474c;/* texto secundario / atenuado */
+  --color-background: #f8f9ff;
+  --color-surface: #ffffff;
+  --color-surface-container: #e6eeff;
+  --color-on-surface: #0d1c2f;
+  --color-on-surface-variant: #45474c;
 
-  /* Bordes y estados */
-  --color-outline: #75777d;           /* bordes definidos */
-  --color-outline-variant: #c5c6cd;   /* bordes suaves */
-  --color-error: #ba1a1a;             /* errores */
-  --color-error-container: #ffdad6;   /* fondo suave de alerta (badges) */
-  --color-on-error-container: #93000a;/* texto sobre fondo de alerta */
+  --color-outline: #75777d;
+  --color-outline-variant: #c5c6cd;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
 
-  /* Estados de asientos (mapa de selección) */
-  --color-seat-available: #d5e3fd;    /* asiento disponible */
-  --color-seat-occupied: #434656;     /* asiento ocupado (no clickeable) */
+  --color-seat-available: #d5e3fd;
+  --color-seat-occupied: #434656;
 
   /* ---------- TIPOGRAFÍA ---------- */
-  /* Inter para títulos; Roboto Mono para cuerpo, datos y labels.
-     Las fuentes se cargan con <link> en el <head> de cada HTML. */
   --font-headline: 'Inter', sans-serif;
   --font-body: 'Roboto Mono', monospace;
 
-  /* Tamaños de texto (en rem: relativos al tamaño base del root) */
-  --text-headline-lg: 2rem;      /* 32px — títulos grandes */
-  --text-headline-md: 1.5rem;    /* 24px — títulos medianos */
-  --text-body: 1rem;             /* 16px — cuerpo / datos */
-  --text-label: 0.875rem;        /* 14px — labels */
+  --text-headline-lg: 2rem;
+  --text-headline-md: 1.5rem;
+  --text-body: 1rem;
+  --text-label: 0.875rem;
 
-  /* Pesos */
   --weight-bold: 700;
   --weight-semibold: 600;
   --weight-medium: 500;
   --weight-regular: 400;
 
-  /* ---------- ESPACIADO (grilla de 8px) ---------- */
+  /* ---------- ESPACIADO ---------- */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
 
-  /* Márgenes de página (según Slate & Mono) */
   --margin-desktop: 24px;
   --margin-mobile: 16px;
 
   /* ---------- BORDES REDONDEADOS ---------- */
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius: 0.5rem;       /* 8px  — botones e inputs */
-  --radius-md: 0.75rem;   /* 12px */
-  --radius-lg: 1rem;      /* 16px — tarjetas y secciones */
-  --radius-full: 9999px;  /* pills / chips */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
 
   /* ---------- OTROS ---------- */
-  --max-width: 1200px;    /* ancho máximo del contenido en desktop */
+  --max-width: 1200px;
 }

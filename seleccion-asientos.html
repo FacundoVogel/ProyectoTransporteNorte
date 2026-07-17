@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal de Ómnibus BA — Seleccioná tus asientos</title>
 
-  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Íconos: Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-  <!-- Hojas de estilo (el orden importa por la cascada) -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -22,7 +19,7 @@
 </head>
 <body>
 
-  <!-- ============ HEADER (compartido) ============ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="contenedor site-header__inner">
       <a href="index.html" class="logo">
@@ -39,11 +36,10 @@
     </div>
   </header>
 
-  <!-- ============ CONTENIDO ============ -->
+  <!-- CONTENIDO -->
   <main class="contenido">
     <div class="contenedor">
 
-      <!-- Stepper del checkout -->
       <ol class="stepper">
         <li class="stepper__paso stepper__paso--hecho">
           <span class="stepper__num">1</span>
@@ -61,10 +57,8 @@
         </li>
       </ol>
 
-      <!-- Layout: mapa (izquierda) + resumen (derecha) -->
       <div class="layout-seleccion">
 
-        <!-- ----- Columna izquierda: mapa de asientos ----- -->
         <section class="asientos-seccion" data-mapa-asientos>
           <div class="asientos-header">
             <h2>Seleccioná tus asientos</h2>
@@ -78,7 +72,6 @@
           <div class="bus-panel">
             <div class="bus">
 
-              <!-- Frente: conductor + espacio accesible -->
               <div class="bus-frente">
                 <div class="bus-conductor">
                   <span class="bus-mini-label">Frente</span>
@@ -91,10 +84,8 @@
                 </div>
               </div>
 
-              <!-- Filas de asientos -->
               <div class="bus-filas">
 
-                <!-- Fila 1 -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento"><input type="checkbox" id="a1A" value="1A"><label class="asiento__btn" for="a1A">1A</label></span>
@@ -107,7 +98,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 2 -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento"><input type="checkbox" id="a3A" value="3A"><label class="asiento__btn" for="a3A">3A</label></span>
@@ -120,7 +110,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 3 -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento"><input type="checkbox" id="a5A" value="5A"><label class="asiento__btn" for="a5A">5A</label></span>
@@ -133,7 +122,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 4 (ocupada) -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
@@ -146,7 +134,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 5 -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento"><input type="checkbox" id="a7A" value="7A"><label class="asiento__btn" for="a7A">7A</label></span>
@@ -159,7 +146,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 6 -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento"><input type="checkbox" id="a9A" value="9A"><label class="asiento__btn" for="a9A">9A</label></span>
@@ -172,7 +158,6 @@
                   </div>
                 </div>
 
-                <!-- Fila 7 (ocupada) -->
                 <div class="bus-fila">
                   <div class="par-asientos">
                     <span class="asiento asiento--ocupado"><span class="asiento__btn"><span class="material-symbols-outlined">close</span></span></span>
@@ -190,14 +175,12 @@
               <div class="bus-atras">Fondo</div>
             </div>
 
-            <!-- Imagen del interior -->
             <div class="bus-imagen">
               <img src="img/interior-semicama.png" alt="Vista del interior del colectivo Terminal de Ómnibus BA">
             </div>
           </div>
         </section>
 
-        <!-- ----- Columna derecha: resumen del viaje ----- -->
         <aside>
           <div class="tarjeta resumen-compra">
             <h2>Resumen del viaje</h2>
@@ -236,7 +219,6 @@
             </button>
           </div>
 
-          <!-- Nota sobre asientos preferenciales -->
           <div class="nota-accesibilidad">
             <span class="material-symbols-outlined">info</span>
             <div>
@@ -250,7 +232,7 @@
     </div>
   </main>
 
-  <!-- ============ FOOTER (compartido) ============ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="contenedor site-footer__inner">
       <span class="site-footer__marca">Terminal de Ómnibus BA</span>
@@ -263,7 +245,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript mínimo (mapa de asientos + resumen dinámico) -->
   <script src="js/main.js"></script>
 </body>
 </html>

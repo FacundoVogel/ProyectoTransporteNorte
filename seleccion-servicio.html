@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal de Ómnibus BA — Seleccioná tu servicio</title>
 
-  <!-- Fuentes: Inter (títulos) + Roboto Mono (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Íconos: Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-  <!-- Hojas de estilo (el orden importa por la cascada) -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -22,7 +19,7 @@
 </head>
 <body>
 
-  <!-- ============ HEADER (compartido) ============ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="contenedor site-header__inner">
       <a href="index.html" class="logo">
@@ -39,23 +36,19 @@
     </div>
   </header>
 
-  <!-- ============ CONTENIDO ============ -->
+  <!-- CONTENIDO -->
   <main class="contenido">
     <div class="contenedor">
 
-      <!-- Título de la pantalla -->
       <section class="encabezado-pagina">
         <h1>Seleccioná tu mejor opción</h1>
       </section>
 
-      <!-- Layout: opciones (izquierda) + resumen (derecha) -->
       <div class="layout-seleccion">
 
-        <!-- ----- Columna izquierda: opciones de servicio ----- -->
         <div>
           <div class="tarjeta">
 
-            <!-- Resumen del viaje (horario y recorrido) -->
             <div class="viaje-resumen">
               <div class="viaje-resumen__col">
                 <p class="viaje-resumen__etiqueta">Salida</p>
@@ -74,10 +67,8 @@
               </div>
             </div>
 
-            <!-- Opciones de clase (radios estilados) -->
             <div class="opciones-servicio">
 
-              <!-- Semi Cama -->
               <input type="radio" id="semi-cama" name="servicio" class="opcion-radio"
                      data-clase="Semi Cama" data-precio="35000" checked>
               <label for="semi-cama" class="opcion-servicio">
@@ -98,7 +89,6 @@
                 </div>
               </label>
 
-              <!-- Cama Ejecutivo -->
               <input type="radio" id="cama-ejecutivo" name="servicio" class="opcion-radio"
                      data-clase="Cama Ejecutivo" data-precio="50000">
               <label for="cama-ejecutivo" class="opcion-servicio">
@@ -123,7 +113,6 @@
                 </div>
               </label>
 
-              <!-- Cama Individual -->
               <input type="radio" id="cama-individual" name="servicio" class="opcion-radio"
                      data-clase="Cama Individual" data-precio="55000">
               <label for="cama-individual" class="opcion-servicio">
@@ -152,7 +141,6 @@
           </div>
         </div>
 
-        <!-- ----- Columna derecha: resumen y acción ----- -->
         <div>
           <div class="tarjeta resumen-compra">
             <h2>Resumen</h2>
@@ -180,7 +168,6 @@
             <p class="resumen-nota">Los precios incluyen todos los impuestos obligatorios.</p>
           </div>
 
-          <!-- Tarjeta atmosférica con imagen de interior -->
           <div class="tarjeta-imagen">
             <img src="img/interior-cama-ejecutivo.png" alt="Interior de colectivo Cama Ejecutivo de Terminal de Ómnibus BA">
             <div class="tarjeta-imagen__overlay">
@@ -193,7 +180,7 @@
     </div>
   </main>
 
-  <!-- ============ FOOTER (compartido) ============ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="contenedor site-footer__inner">
       <span class="site-footer__marca">Terminal de Ómnibus BA</span>
@@ -206,7 +193,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript mínimo (resumen dinámico + navegación) -->
   <script src="js/main.js"></script>
 </body>
 </html>
